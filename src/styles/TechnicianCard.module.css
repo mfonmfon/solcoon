@@ -1,0 +1,31 @@
+.technicianContainer{
+  min-height: 30vh;
+  max-width: 80%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  margin-top: 10%;
+  border:none;
+  border-radius: 10px;
+  background-color: black;
+}
+.technicianContainer .technicianCardText{
+  color: white;
+  font-size: 45px;
+  padding: 19px;
+  margin: 0;
+  text-align: center;
+}
+ .technicianCardText span{
+  color: goldenrod;
+  font-family: Arial, Helvetica, sans-serif;
+ }
+ .TechnicianCardButton{
+  border: 1px transparent;
+  border-radius: 6px;
+  padding: 10px 18px;
+  align-items: center;
+  margin-left: 47%;
+  font-size: 13px;
+  font-weight: bold;
+ }

@@ -1,6 +1,11 @@
 import LandingPage from "../pages/home/LandingPage"
 import SolvasPro from "../pages/solvaspro/SolvasPro"
 import Explore from "../pages/explore/Explore"
+import BecomeTechnician from "../pages/becomeTechnician/BecomeTechnician"
+import Login from "../auth/login/Login"
+import Signup from "../auth/signup/Signup"
+import UserOptions from "../auth/UserOptions/UserOptions"
+import LetsMeetYou from "../components/letsMeetYou/LetsMeetYou"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -19,7 +24,28 @@ const SOLVAS_ROUTES = [
   {
     path: '/explore',
     element: <Explore/>
-  }
+  },
+
+  {
+    path: '/becomeatechnician',
+    element: <BecomeTechnician/>
+  },
+  {
+    path: '/login',
+    element: <Login/>
+  },
+  {
+    path: '/join',
+    element: <Signup/>
+  },
+  {
+    path: '/option',
+    element: <UserOptions/>
+  },
+  {
+    path: '/letsmeetyou',
+    element: <LetsMeetYou/>
+  },
 
 ]
 export default SOLVAS_ROUTES

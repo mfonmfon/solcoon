@@ -35,7 +35,11 @@ const Header = () => {
               </Link>
             </li>
           ))}
-          <button className={HeaderStyles.joinButton}>Join</button>
+          <button className={HeaderStyles.joinButton}>
+         
+            <Link to={'/option'}>Join</Link>
+
+            </button>
         </ul>
       </nav>
     </div>

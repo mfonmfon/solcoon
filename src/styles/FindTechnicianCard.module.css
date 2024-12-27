@@ -1,0 +1,7 @@
+.container{
+  width: 50%;
+  height: 50vh;
+  background-image: url();
+  background-size: cover;
+  background-position:center;
+}

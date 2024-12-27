@@ -1,0 +1,61 @@
+.logo{
+  margin-left: 8%;
+  font-family: Verdana;
+}
+.content{
+  transform: translate(50%, 50%);
+  position: absolute;
+  left: 23%;
+  top: 1%;
+  padding: auto;
+  margin: auto;
+  text-align: center;
+}
+.content h3{
+  max-width: 400px;
+  font-size: 32px;
+  font-weight: 400;
+}
+.container{
+  justify-content: center;
+  max-width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.contentSub{
+  display: flex;
+  gap: 69px;
+}
+.optionCard{
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 170px;
+  height: 140px;
+}
+.buttonContainer{
+  margin-top: 10%;
+  bottom: 10%;
+}
+.btnOne{
+  border: 1px solid black;
+  border-radius: 9px;
+  background-color: black;
+  color: white;
+  padding: 10px 29px;
+  font-size: 10px;
+}
+.btnOne a{
+  text-decoration: none;
+  color: white;
+  list-style: none;
+  font-size: 10px;
+}
+.account{
+  font-size: 15px;
+}
+.account a{
+  list-style: none;
+  color: black;
+  font-size: 15px;
+}

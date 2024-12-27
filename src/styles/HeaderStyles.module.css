@@ -46,16 +46,21 @@
   border-radius: 5px;
   width: 80px; 
   height: 36px;
-  background-color: white;
+  background-color: black;
+  color: white;
   transition: 0.3s;
   font-size: 13px;
 }
+.joinButton a{
+  text-decoration: none;
+  color: white;
 
+  
+}
 .joinButton:hover {
   background-color: black;
   color: white;
 }
-
 /* Mobile Responsive Design */
 @media (max-width: 768px) {
   .headerContainer {

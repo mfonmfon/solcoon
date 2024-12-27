@@ -6,25 +6,25 @@ const navBarData = [
 
   {
     id:0,
-    links: "/solvaspro",
+    path: "/solvaspro",
     text:"solvasPro"
   },
 
   {
     id:1,
-    links: "/explore",
+    path: "/explore",
     text:"Explore"
   },
 
   {
     id:2,
-    links: "/becometechnician",
+    path: "/becometechnician",
     text:"Become A Technician"
   },
 
   {
     id:3,
-    links: "/signin",
+    path: "/login",
     text:"Sign In"
   }
 ]
