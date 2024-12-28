@@ -6,6 +6,8 @@ import PopularService from '../../components/cards/PopularService'
 import TechnicianCard from '../../components/cards/TechnicianCard'
 import UserOptions from '../../auth/UserOptions/UserOptions'
 import FindTechnicianCard from '../../components/cards/FindTechnicianCard'
+import Footer from '../../components/footer/Footer'
+import MappingDesign from '../../components/mapping/MappingDesign'
 
 const LandingPage = () => {
   return (
@@ -14,7 +16,9 @@ const LandingPage = () => {
       <HeroSection />
       <PopularService />
       <FindTechnicianCard/>
-      <TechnicianCard />      
+      <MappingDesign/>  
+      <TechnicianCard />
+      <Footer/>
     </div>
   )
 }

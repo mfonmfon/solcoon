@@ -1,7 +1,7 @@
 .heroSectionContainer{
   width: 80%;
   height: 65vh;
-  background-color: rgb(46, 94, 238);
+  background-color:rgb(3, 8, 66);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,6 +10,7 @@
   margin-left: 10%;
 }
 .secondHeroImages .imageTwo{
+  display: none;
   width: 176px;
   display: block;
   padding:29px 20px ;
@@ -47,7 +48,6 @@
   color: white;
   border-radius: 9px;
 }
-
 /* Tablet Devices (768px and below) */
 @media (max-width: 768px) {
   .heroSectionContainer {
@@ -55,14 +55,12 @@
     height: 60vh;
     margin: 5% auto;
   }
-
   .heroWrapper {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -30%);
     text-align: center;
   }
-
   .heroWrapper h2 {
     font-size: 32px;
     line-height: 40px;

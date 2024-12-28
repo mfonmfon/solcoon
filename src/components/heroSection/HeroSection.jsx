@@ -40,8 +40,8 @@ const HeroSection = () => {
 
       {/* Second Images */}
       <div className={HeroStyles.secondHeroImages}>
-        <img src={FirstSolarImage} className={HeroStyles.imageTwo} alt="" />
-        <img src={SecondSolarImage} className={HeroStyles.imageTwo} alt="" />
+        {/* <img src={FirstSolarImage} className={HeroStyles.imageTwo} alt="" /> */}
+        {/* <img src={SecondSolarImage} className={HeroStyles.imageTwo} alt="" /> */}
       </div>
     </div>
   );

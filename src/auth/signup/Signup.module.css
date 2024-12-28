@@ -13,9 +13,6 @@
   background-color: #f5f5f5;  
   padding: 220px;
 }
-.SignupImage{
-  /* width:1; */
-}
 
 .SignupLeftSide .SignupText>h1{
   font-size: 50px;
@@ -48,8 +45,8 @@
 }
 
 .SignupForms input {
-  width: 100%;
-  padding: 19px 10px;
+  width: 300px;
+  padding: 15px 10px;
   border:none;
   border-radius: 5px;
   font-size: 1rem;
@@ -58,18 +55,18 @@
 
 button[type="submit"]  {
   width: 100%;
-  padding: 19px;
+  padding: 15px;
   background-color:black;
   color: white;
   border: 1px solid black;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin-top: 10px;
   transition: 0.3s ease;
-  text-decoration: none !important;
+ 
 }
-button {
+button a{
   color: white;
   text-decoration: none;
 }
@@ -102,7 +99,7 @@ button[type="submit"]:hover {
 }
 
 .SignupRightSide .SignupImage{
-  max-width: 120%;
+  max-width: 100%;
   height: 100vh;
   background-size: cover;
   object-fit: cover;

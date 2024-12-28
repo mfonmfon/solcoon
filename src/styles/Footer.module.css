@@ -1,0 +1,39 @@
+.footerContainer{
+  width: 100%;
+  height: 250px;
+  background: rgb(3, 8, 66);
+  ;
+  margin-top: 15%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.footerItems{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+h2{
+  font-size: 15px;
+  color: white;
+}
+.firstListItems  li{
+  list-style: none !important;
+}
+.secondListItems li{
+  list-style: none !important;
+}
+.thirdListItems li{
+  list-style: none !important;
+}
+.firstListItems li a{
+  text-decoration: none !important;
+  color: white;
+}
+.secondListItems li a{
+  text-decoration: none !important;
+  color: white;
+}
+.thirdListItems li a{
+  text-decoration: none !important;
+  color:white;
+}

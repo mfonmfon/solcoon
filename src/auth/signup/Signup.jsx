@@ -14,15 +14,15 @@ const Signup = () => {
       </div>
 
       <div className={SignupStyle.SignupLeftSide}>
-          <div className={SignupStyle.SignupContent}>
+        <div className={SignupStyle.SignupContent}>
             
       <div className={SignupStyle.SignupText}>
         <p   className={SignupStyle.errorMessage ? "errorMessage": "offscreen"} aria-live='assertive'>
           {/* {errorMessage} */}
         </p>
         
-      <h1>{`Signup to find clients that needs your service`}</h1>
-      <p>{`Get started here as a technician`}</p>
+      {/* <h1>{`Signup to find clients that needs your service`}</h1> */}
+      <p>{`Signup to find clients that needs your service`}</p>
       </div>
 
   <form id={SignupStyle.formFilling} >
@@ -30,8 +30,7 @@ const Signup = () => {
       <label htmlFor='firstName' ></label>
     <input type="text"
     id='firstName'
-      placeholder="First Name" 
-      autoComplete='off'
+      placeholder="First Name"
       // onChange={""}`
       />
     </div>
@@ -40,7 +39,6 @@ const Signup = () => {
       <input type="text"
       id='lastName'
         placeholder="Last Name" 
-        autoComplete='off'
         // onChange={""}
         />
     </div>
@@ -50,17 +48,9 @@ const Signup = () => {
       id='email' 
       placeholder="example@gmail.com"
       //  ref={userRef}
-      autoComplete='off'
+      // autoComplete='off'
       required
       //  onChange={""}
-        />
-    </div>
-    <div className={SignupStyle.SignupForms}>
-      <label htmlFor='phoneNumber'></label>
-      <input type="phonenumber"
-      id='phoneNumber'
-        placeholder="Phone number" 
-        autoComplete='off'
         />
     </div>
 
@@ -74,7 +64,9 @@ const Signup = () => {
     
     </div>
 
-    <button className={SignupStyle.Button} type="submit">Signup</button>
+    <button className={SignupStyle.Button} type="submit">
+      <a href='/congratulations'>Signup</a> 
+    </button>
   </form>
       </div>
       </div>

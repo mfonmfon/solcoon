@@ -6,6 +6,7 @@ import Login from "../auth/login/Login"
 import Signup from "../auth/signup/Signup"
 import UserOptions from "../auth/UserOptions/UserOptions"
 import LetsMeetYou from "../components/letsMeetYou/LetsMeetYou"
+import CongratulationMessage from "../components/onboarding/CongratulationMessage"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -45,6 +46,10 @@ const SOLVAS_ROUTES = [
   {
     path: '/letsmeetyou',
     element: <LetsMeetYou/>
+  },
+  {
+    path: '/congratulations',
+    element:<CongratulationMessage/>
   },
 
 ]

@@ -53,3 +53,87 @@ export const sponsorsData = [
   },
   
 ]
+
+export const footerFirtData =[
+  {
+    id: 0,
+    path:"/explore",
+    text: "Explore"
+  },
+  {
+    id: 0,
+    path:"/explore",
+    text: "How Solcon Works"
+  },
+  {
+    id: 0,
+    path:"/explore",
+    text: "Customer Service Storeies"
+  },
+  {
+    id: 0,
+    path:"/explore",
+    text: "Trusted & Safety"
+  },
+  {
+    id: 0,
+    path:"/explore",
+    text: "Quality Guide"
+  },
+  
+]
+
+export const footerSecondData =[
+  {
+    id: 0,
+    path:"",
+    text:"Become a Solcon Technician"
+  },
+  {
+    id: 0,
+    path:"",
+    text:"Kickstart"
+  },{
+    id: 0,
+    path:"",
+    text:"Community Hub"
+  },{
+    id: 0,
+    path:"",
+    text:"Events"
+  },
+
+]
+
+export const footerThirdData =[
+  {
+    id: 0,
+    path:"",
+    text:"About Solcon"
+  },
+  {
+    id: 0,
+    path:"",
+    text:"Help & Support"
+  },
+  {
+    id: 0,
+    path:"",
+    text:"Social Impact"
+  },
+  {
+    id: 0,
+    path:"",
+    text:"Term of Service"
+  },
+  {
+    id: 0,
+    path:"",
+    text:"Privacy & Policy"
+  },
+  {
+    id: 0,
+    path:"",
+    text:"Partnerships"
+  }
+]

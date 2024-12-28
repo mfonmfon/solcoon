@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.rightSider{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 110px;
+}
+.leftSider{
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+}
+.rightSider img{
+  max-width: 400px;
+  height: 80vh;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
