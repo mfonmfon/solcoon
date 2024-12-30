@@ -1,12 +1,13 @@
 .container{
-  display:flex;
   background-color: black;
 }
 .contact button{
   border:1px solid black;
-  background-color:white;
-
+  background-color:goldenrod;
 }
 .contentHeader{
   color:white;
+}
+.contact{
+  display:flex;
 }

@@ -7,7 +7,7 @@ const AskQuestions = () => {
       <h1>Do You Have Question</h1>
       <p>We'll help connect you to very good technician</p>
       <div className={AskQuestionStyle.contact}>
-        <button className={AskQuestionStyle.questionContiner}>Contact</button>
+        <button className={AskQuestionStyle.question}>Contact</button>
       </div>
     </div>
   </div>
