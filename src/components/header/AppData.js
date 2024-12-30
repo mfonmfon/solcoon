@@ -137,3 +137,13 @@ export const footerThirdData =[
     text:"Partnerships"
   }
 ]
+
+export const postCardData = [
+  {
+    id: 0,
+    date: new Date(),
+    typeOfProblem:"",
+    problemDescription: "",
+
+  }
+]

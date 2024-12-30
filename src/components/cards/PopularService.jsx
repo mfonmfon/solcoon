@@ -7,7 +7,8 @@ const PopularService = () => {
       <div className={PopularServiceStyle.headerText}>
         <h1>{`Popular Services`}</h1>
       </div>
-      <div className={PopularServiceStyle.scroll}>
+      <div  className={PopularServiceStyle.scroll}>
+
         <div className={PopularServiceStyle.card}>
           <h3>{`Panel Cleaning`}</h3>
           <img src={PopularServiceStyle.service1} alt="" />
@@ -41,5 +42,4 @@ const PopularService = () => {
     </div>
   )
 }
-
 export default PopularService

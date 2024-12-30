@@ -15,7 +15,6 @@ const HeroSection = () => {
 
   return (
     <div className={HeroStyles.heroSectionContainer}>
-      {/* First Images */}
       <div className={HeroStyles.firstHeroImages}>
         <img src="" alt="" className={HeroStyles.imageOne} />
         <img src="" alt="" className={HeroStyles.imageOne} />
@@ -38,10 +37,7 @@ const HeroSection = () => {
         <Sponsors />
       </div>
 
-      {/* Second Images */}
       <div className={HeroStyles.secondHeroImages}>
-        {/* <img src={FirstSolarImage} className={HeroStyles.imageTwo} alt="" /> */}
-        {/* <img src={SecondSolarImage} className={HeroStyles.imageTwo} alt="" /> */}
       </div>
     </div>
   );
