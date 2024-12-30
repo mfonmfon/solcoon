@@ -2,22 +2,51 @@
     max-width:100%;
     min-height: 100px;
   }
+  .container h1{
+    margin-left: 12%;
+  }
 
   .inspiredContent{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 27px;
-    gap: 20px;
+    gap: 20px;  
+    overflow: hidden;
   }
   .getInspiredGridStyle{
     width:300px;
   }
+
   .inspiredContentGrid{
     grid-column: 5px;
-    grid-template-columns: repeat(5px, 4px 3px);
-    height: 180px;
+    grid-template-columns: repeat(5px, 5px 5px);
+    height: 235px;
   }
   .inspiredContentGrid h2{
     color: black;
+  }
+  @media (max-width:768px){
+    .container{
+      width: 550px;
+    }
+    .inspiredContent{
+      display: block;
+      padding: 15px 50px;
+      grid-template-columns:50%;
+      align-items: center;
+    }
+    .inspiredContentGrid h5{
+      font-size:16px;
+      margin-top:3%;
+    }
+    .container h1{
+      font-size:20px;
+      margin-top:10%;
+      text-align: center;
+    }
+    .inspiredContentGrid {
+      width: 100%;
+      justify-items: center;
+    }
   }
