@@ -3,6 +3,7 @@ import TechnicianProfile from '../../components/userProfile/technicianProfile/Te
 import Header from '../../components/header/Header'
 import ExploreHeroSection from '../../components/heroSection/exploreHero/ExploreHeroSection'
 import GetInspiredGrid from '../../components/getInspiredGrid/GetInspiredGrid'
+import AskQuestion from '../../components/askQuestions/AskQuestions'
 const Explore = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const Explore = () => {
       <ExploreHeroSection/>
       {/* <TechnicianProfile /> */}
       <GetInspiredGrid/>
+      <AskQuestion />
     </div>
   )
 }
