@@ -43,10 +43,12 @@
     .container h1{
       font-size:20px;
       margin-top:10%;
+      margin-right: 19%;
+      left: 0;
       text-align: center;
     }
     .inspiredContentGrid {
-      width: 100%;
+      width: 90%;
       justify-items: center;
     }
   }
