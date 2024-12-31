@@ -1,9 +1,40 @@
-import React from 'react'
+import React, {useState} from 'react'
 import LoginStyle from "../../auth/login/Login.module.css"
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-  return (
+  const [email, setEmail] = useState("");
+  const [password, setPassword]= useState("")
+
+  const handleEmailSubmit = (event)=>{
+    event.preventDefault()
+  }
+  const handlePasswordSubmit=(event)=>{
+    event.preventDefault()
+  }
+
+  const handleLoginFormSubmit = async(event)=>{
+    event.preventDefault()
+
+    try{
+      const responseLoginFormData = await fetch('',{
+        method:'POST',
+        header:{
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(
+          email,
+          password,
+        )
+      });
+      if(!responseLoginFormData.ok)throw new Error("Error")
+        const result = await responseLoginFormData.json()
+      alert("Success", result)
+    }catch(error){
+      console.error("error")
+    }
+  }
+   return (
     <div className={LoginStyle.loginContainer}>
       <h4 className={LoginStyle.backToHomePage}><Link to={'/'}>back</Link></h4>
       <div className={LoginStyle.loginContent}>
@@ -11,12 +42,14 @@ const Login = () => {
        <h2> Welcome back!</h2>
       </div>
       
-      <form id={LoginStyle.loginForm}>
+      <form onChange={handleLoginFormSubmit} id={LoginStyle.loginForm}>
         <div className={LoginStyle.inputContainer}>
         <label className='inputLabel' htmlFor='email'>Email</label>
         <input type='email' 
          placeholder=''
          name='email'
+         value={email}
+         onChange={handleEmailSubmit}
          required
          />
         </div>
@@ -26,12 +59,14 @@ const Login = () => {
         <input type='password' 
          placeholder='password'
          name='password'
+         onChange={handlePasswordSubmit}
+         value={password}
          required
          />
         </div>
       </form>
      <div className={LoginStyle.buttonContainer}>
-     <button className={LoginStyle.loginButton}><a href='/login'>Login</a></button>
+     <button onChange={handleLoginFormSubmit} className={LoginStyle.loginButton}><a href='/login'>Login</a></button>
      </div>
      <h4 className={LoginStyle.option}> Don't have an account?
       <a href='/join'>Join</a>
