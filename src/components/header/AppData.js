@@ -167,17 +167,17 @@ export const askQuestionsData =[
   },
   {
     id: 0,
-    text:"How does Solcon work?",
+    text:"Are the technicain on the platform trained and certified ?",
     menubar: <ArrowDownLeft/>
   },
   {
     id: 0,
-    text:"How does Solcon work?",
+    text:"What kind of service can be requested on the platform ?",
     menubar:<ArrowDownLeft/>
   },
   {
     id: 0,
-    text:"How does Solcon work?",
+    text:"How will the technician locate me fast ?",
     menubar: <ArrowDownLeft/>
   },
   {
