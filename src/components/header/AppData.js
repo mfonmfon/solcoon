@@ -2,6 +2,9 @@ import FordImage from '../../images/sponsorsImages/FordImage.png'
 import GapsImage from '../../images/sponsorsImages/GapsImage.png'
 import UberImage from '../../images/sponsorsImages/UberImage.png'
 import FordImageTwo from '../../images/sponsorsImages/FordImage.png'
+import { BiLeftArrow, BiNotification } from 'react-icons/bi'
+import { RiDropdownList } from 'react-icons/ri'
+import { ArrowDownLeft } from 'lucide-react'
 const navBarData = [
 
   {
@@ -146,4 +149,41 @@ export const postCardData = [
     problemDescription: "",
 
   }
+]
+
+export const technicianData = [
+  {
+    id: 0,
+    notification: <BiNotification/>,
+    order:"Order",
+  }
+]
+
+export const askQuestionsData =[
+  {
+    id: 0,
+    text:"How does Solcon work?",
+    menubar: <ArrowDownLeft/>
+  },
+  {
+    id: 0,
+    text:"How does Solcon work?",
+    menubar: <ArrowDownLeft/>
+  },
+  {
+    id: 0,
+    text:"How does Solcon work?",
+    menubar:<ArrowDownLeft/>
+  },
+  {
+    id: 0,
+    text:"How does Solcon work?",
+    menubar: <ArrowDownLeft/>
+  },
+  {
+    id: 0,
+    text:"How does Solcon work?",
+    menubar: <ArrowDownLeft/>
+  },
+  
 ]

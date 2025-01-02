@@ -6,7 +6,6 @@ import HeaderLogo from '../../images/logo/SolvasLogo.png';
 
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
-
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -22,7 +21,7 @@ const Header = () => {
         {/* Mobile Toggle Button */}
         <div className={HeaderStyles.appToggle}>
           <button onClick={toggleMenu}>
-            {menuActive ? '✖️' : '☰'}
+            {menuActive ? '' : '☰'}
           </button>
         </div>
 
@@ -36,7 +35,6 @@ const Header = () => {
             </li>
           ))}
           <button className={HeaderStyles.joinButton}>
-         
             <Link to={'/option'}>Join</Link>
 
             </button>

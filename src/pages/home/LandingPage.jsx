@@ -8,6 +8,7 @@ import UserOptions from '../../auth/UserOptions/UserOptions'
 import FindTechnicianCard from '../../components/cards/FindTechnicianCard'
 import Footer from '../../components/footer/Footer'
 import MappingDesign from '../../components/mapping/MappingDesign'
+import AskQuestions from '../../components/askQuestions/AskQuestions'
 
 const LandingPage = () => {
   return (
@@ -16,7 +17,8 @@ const LandingPage = () => {
       <HeroSection />
       <PopularService />
       <FindTechnicianCard/>
-      <MappingDesign/>  
+      <MappingDesign/>
+      <AskQuestions/>
       <TechnicianCard />
       <Footer/>
     </div>

@@ -24,17 +24,14 @@ const HeroSection = () => {
       <div className={HeroStyles.heroWrapper}>
         <h2>{`Find certified solar technicians near you with Solvas`}</h2>
         <div style={{ position: 'relative' }}>
-          <input
-            onChange={handleSearchInput}
-            className={HeroStyles.heroSearchInput}
-            type="search"
-            name="search"
-            placeholder="Search for any technician"
-            value={search}
-          />
-          <SearchIcon size={40} className={HeroStyles.searchIcon} />
+         
         </div>
-        <Sponsors />
+
+        <div className={HeroStyles.button}>
+        <button className={HeroStyles}>Get Started</button>
+        <button className={HeroStyles}>Get Started</button>
+        </div>
+        
       </div>
 
       <div className={HeroStyles.secondHeroImages}>

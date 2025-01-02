@@ -1,19 +1,24 @@
 import React from 'react'
 import AskQuestionStyle from '../../styles/AskQuestion.module.css'
+import { askQuestionsData } from '../header/AppData'
+import { RxDropdownMenu } from 'react-icons/rx'
 
 const AskQuestions = () => {
   return (
     <div className={AskQuestionStyle.container}>
-      <div className={AskQuestionStyle.splitHeader}>
-      <div className={AskQuestionStyle.contentHeader}>
-      <h1>Do You Have Question</h1>
-      <p>We'll help connect you to very good technician</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+    <div className={AskQuestionStyle.splitHeader}>
+      <ul className={AskQuestionStyle.tagList}>
+        {askQuestionsData.map((data, index)=>(
+          <div className={AskQuestionStyle.questionSpit}>
+            <li key={index} className={AskQuestionStyle.listItems}>
+            <h1>{data.text}</h1>
+            <span>{data.menubar}</span>
+          </li>
+          </div>
+        ))}
+      </ul>
     </div>
-
-    <div className={AskQuestionStyle.contact}>
-        <button className={AskQuestionStyle.question}>Contact</button>
-    </div>
-      </div>
   </div>
   )
 }

@@ -51,4 +51,7 @@
       width: 90%;
       justify-items: center;
     }
+    .getInspiredGridStyle{
+     border-radius:10px 10px;
+    }
   }
