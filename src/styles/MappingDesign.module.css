@@ -1,6 +1,6 @@
 .container{
   display: flex;
-  width: 70%;
+  width: 90%;
   height: 100vh;
   overflow: hidden;
   margin-top: 8%;
@@ -53,4 +53,26 @@
   background-position: center;
   padding:20px;
   border-radius:20px;
+}
+.leftSideGridContent{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin: auto;
+  width: 670px;
+
+}
+.gridContent span{
+  background:rgb(18, 82, 231);
+  border: 1px solid;
+  border-radius: 40px;
+  padding: 5px 10px;
+  color: white;
+  margin-top: 10%;
+}
+.gridContent{
+  box-shadow: 2px 2px 2px  rgba(0,0,0,0.3);
+  padding: 10px 34px;
+  height: 130px;
+  width: 220px;
 }
