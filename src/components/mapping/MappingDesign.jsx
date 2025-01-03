@@ -22,7 +22,7 @@ const MappingDesign = () => {
 
           <div className={MappingDesignStyle.gridContent}>
             <span>2</span>
-            <h4>Create an Account</h4>  
+            <h4>Take Assessment</h4>  
             <p>Sign up with  your first name, last name, email, and your location</p>
           </div>
 

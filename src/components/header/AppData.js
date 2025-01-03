@@ -5,6 +5,7 @@ import FordImageTwo from '../../images/sponsorsImages/FordImage.png'
 import { BiLeftArrow, BiNotification } from 'react-icons/bi'
 import { RiDropdownList } from 'react-icons/ri'
 import { ArrowDownLeft } from 'lucide-react'
+import { IoNotificationsCircleOutline } from 'react-icons/io5'
 const navBarData = [
 
   {
@@ -154,9 +155,19 @@ export const postCardData = [
 export const technicianData = [
   {
     id: 0,
-    notification: <BiNotification/>,
+    path:"/order",
     order:"Order",
-  }
+  },
+  // {
+  //   id: 0,
+  //   path:"/order",
+   
+  // },
+  // {
+  //   id: 0,
+  //   path:"/order",
+  //   order:"Order",
+  // },
 ]
 
 export const askQuestionsData =[

@@ -111,8 +111,8 @@ const Signup = () => {
     
     </div>
 
-    <button onChange={handleFormSubmit} className={SignupStyle.Button} type="submit">
-      <a href='/congratulations'>Signup</a> 
+    <button  onChange={handleFormSubmit} className={SignupStyle.Button} type="submit">
+      <a href='/technicianDashboard'>Signup</a> 
     </button>
   </form>
       </div>
