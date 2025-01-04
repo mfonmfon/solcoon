@@ -9,6 +9,7 @@ import LetsMeetYou from "../components/letsMeetYou/LetsMeetYou"
 import CongratulationMessage from "../components/onboarding/CongratulationMessage"
 import TechnicianDashboard from "../components/dashboard/techniciainDashboard/TechnicainDashboard"
 import Order from "../components/order/Order"
+import TechnicianProfile from "../components/userProfile/technicianProfile/TechnicianProfile"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -60,6 +61,10 @@ const SOLVAS_ROUTES = [
   {
     path: '/order',
     element:<Order/>
+  },
+  {
+    path: '/technicianprofile',
+    element:<TechnicianProfile/>
   },
 
 ]

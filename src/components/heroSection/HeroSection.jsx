@@ -28,7 +28,9 @@ const HeroSection = () => {
         </div>
 
         <div className={HeroStyles.button}>
-        <button className={HeroStyles}>Get Started</button>
+        <button className={HeroStyles} onClick={()=>{
+          window.location.pathname='/join'
+        }}>Get Started</button>
         <button className={HeroStyles}>Get Started</button>
         </div>
         

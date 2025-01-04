@@ -1,0 +1,28 @@
+.container{
+  width: 15%;
+  height: 6 50px;
+  /* background-color: rgb(2, 2, 56); */
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+.content{
+  color:rgb(2, 2, 56) ; 
+}
+.SideBarItems{
+  height: auto !important;
+  width: 90%;
+  padding: 17%;
+}
+.SideBarItems .SideBarItemsList{
+  text-decoration: none !important;
+  list-style: none !important;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 20px;
+  padding-top: 30%;
+  margin: 10%;
+}

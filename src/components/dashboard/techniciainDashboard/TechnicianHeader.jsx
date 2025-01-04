@@ -5,6 +5,8 @@ import { BellIcon, HeartIcon, MessageCircle } from 'lucide-react'
 import { GiLoveHowl } from 'react-icons/gi'
 import { LuMessageSquareHeart } from 'react-icons/lu'
 import TechnicianHeaderStyle from '../../../styles/TechnicianHearder.module.css'
+import TechnicianHeroection from '../../../components/dashboard/techniciainDashboard/TechnicianHeroection'
+import { FaSearch } from 'react-icons/fa'
 const TechnicianHeader = () => {
   const[search, setSearch] = useState("")
 
@@ -14,32 +16,31 @@ const TechnicianHeader = () => {
   }
 
   return (
-    <div  className='container'>
-      <div className='nav'>
-        <div className='logo'>
+    <div  className={TechnicianHeaderStyle.container}>
+      <div className={TechnicianHeaderStyle.nav}>
+        <div className={TechnicianHeaderStyle.logo}>
           <h1>Solcon</h1>
         </div>
 
-        <div className={TechnicianHeaderStyle.input} >
+        <div className={TechnicianHeaderStyle.inputHeader}>
           <input type='text'
+          className={TechnicianHeaderStyle.input}
           placeholder='What Service are you looking for today?'
           name='search'
           value={search}
           onChange={handleSearchInput}
           />
-
+          <button className={TechnicianHeaderStyle.button} >
+            <FaSearch/>
+          </button>
         </div>
-        <ul>
+        <div className={TechnicianHeaderStyle.userProfile}>
           <BellIcon/>
-          <HeartIcon/>
-          {technicianData.map((techData, index)=>(
-            <li key={index}>
-              <Link to={techData.path}>{techData.order}</Link>
-            </li>
-
-          ))}
-        </ul>
+          <li><Link to={'/order'}>Order</Link></li>
+          <li><Link to={'/technicianprofile'}><span>M</span></Link></li>
+        </div>
       </div>
+      <TechnicianHeroection/>
     </div>
   )
 }

@@ -2,10 +2,11 @@ import FordImage from '../../images/sponsorsImages/FordImage.png'
 import GapsImage from '../../images/sponsorsImages/GapsImage.png'
 import UberImage from '../../images/sponsorsImages/UberImage.png'
 import FordImageTwo from '../../images/sponsorsImages/FordImage.png'
-import { BiLeftArrow, BiNotification } from 'react-icons/bi'
+import { BiLeftArrow, BiLogOutCircle, BiNotification } from 'react-icons/bi'
 import { RiDropdownList } from 'react-icons/ri'
-import { ArrowDownLeft } from 'lucide-react'
+import { ArrowDownLeft, HomeIcon, LogOut, LogOutIcon, Settings2Icon, SettingsIcon, UserRoundCheckIcon } from 'lucide-react'
 import { IoNotificationsCircleOutline } from 'react-icons/io5'
+import { MdExplore } from 'react-icons/md'
 const navBarData = [
 
   {
@@ -197,4 +198,37 @@ export const askQuestionsData =[
     menubar: <ArrowDownLeft/>
   },
   
+]
+
+export const SideBarData =[
+  {
+    id: 0,
+    icons:<HomeIcon size={15}/>,
+    userProfile:"Home",
+    path: "/home"
+  },
+  {
+    id: 1,
+    icons:<UserRoundCheckIcon  size={15}/>,
+    userProfile:"Profile",
+    path: "/profile"
+  },
+  {
+    id: 2,
+    icons:<MdExplore size={15}/>,
+    userProfile:"Explore",
+    path: "/home"
+  },
+  {
+    id: 3,
+    icons:<SettingsIcon  size={15}/>,
+    userProfile:"Settings",
+    path: "/settings"
+  },
+  {
+    id: 4,
+    icons:<BiLogOutCircle size={15}/>,
+    userProfile:"Log Out",
+    path: "/logout"
+  },
 ]
