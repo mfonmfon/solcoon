@@ -3,7 +3,7 @@
   height: 15vh;
   background-image:url(../images/heroImages/ThirdSolarImage.jpg);
   /* rgb(2, 2, 56) */
-  background-position: center 100;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }

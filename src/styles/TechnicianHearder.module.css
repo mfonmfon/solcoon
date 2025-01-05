@@ -1,4 +1,5 @@
 .container{
+
   width: 100%;
   box-shadow: 0px 0px 0px 1px rgb(0,0,0,0.2);
   max-height: 150px;
@@ -7,10 +8,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
 }
 .userProfile{
   display: flex;
   gap: 20px;
+  position: relative;
 }
 .userProfile li span{
   border: 2px solid rgb(9, 169, 9);
@@ -22,8 +25,6 @@
  .input{
   padding: 13px 0;
   width: 480px;
-  /* margin-right:35%; */
-  /* margin-top: 10%; */
 }
 .userProfile li{
   list-style: none;
