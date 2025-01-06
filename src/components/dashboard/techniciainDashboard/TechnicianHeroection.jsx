@@ -5,7 +5,7 @@ const TechnicianHeroection = () => {
   return (
     <div className={TechnicianHeroectionStyle.container}>
       <div className={TechnicianHeroectionStyle.content}>
-        <h1>{`Welcome Mfon Mfon`}</h1>
+        
         
       </div>
       

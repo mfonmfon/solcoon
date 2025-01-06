@@ -12,6 +12,8 @@
 
 /* Profile Header */
 .profileHeader {
+  background: #011036;
+  background: linear-gradient(50kg, #011036, 0%, rgb(2, 8, 70));  
   display: flex;
   align-items: center;
   gap: 20px;

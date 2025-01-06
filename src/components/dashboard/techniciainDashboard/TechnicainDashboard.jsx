@@ -7,8 +7,9 @@ const TechnicianDashboard = ()=>{
   return (
     <div className=''>
       <TechnicianHeader/>
-      {/* <SideBar /> */}
-     <FindTechnicianCard/>
+      {/* <SideBar/> */}
+      <FindTechnicianCard/>
+     
     </div>
   )
 }

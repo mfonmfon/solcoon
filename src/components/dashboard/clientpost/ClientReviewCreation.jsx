@@ -1,12 +1,32 @@
-import React from 'react'
-
+import React, {useState} from 'react'
+import CreateReviewStyles from '../../../styles/CreateReviews.module.css'
 const ClientReviewCreation = () => {
-  const createdAt = new Date();
+  const createdAt = new Date().getDay().toString();
+  const [formData, setFormData] = useState()
   return (
+    <div className={CreateReviewStyles}>
+      <div >
+        <div>
+          <form>
+            <input type='range'
+            className='reviewCount'
+            placeholder='reviews count'
+            name='range'
+            onClick={()=>{
 
-    <div className=''>
-      <div>
-      <h1>{createdAt}</h1>
+            }}
+            />
+            <input type='description' 
+            className='reviewDescription'
+            name='description'
+            placeholder='description'
+            onClick={()=>{
+
+            }}
+            />
+            <h4>{createdAt}</h4>
+          </form>
+        </div>
       </div>
     </div>
   )

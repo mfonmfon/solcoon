@@ -1,47 +1,79 @@
 .container{
-
-  width: 100%;
-  box-shadow: 0px 0px 0px 1px rgb(0,0,0,0.2);
-  max-height: 150px;
+  max-width:100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
+.logo{
+  margin-left: 10%;
+}
+
 .nav{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  
+  margin: auto;
 }
 .userProfile{
-  display: flex;
-  gap: 20px;
-  position: relative;
-}
-.userProfile li span{
-  border: 2px solid rgb(9, 169, 9);
-  border-radius: 40px;
-  background-color: rgb(126, 127, 127);
-  color: white;
-  padding: 10px 13px;
-}
- .input{
-  padding: 13px 0;
-  width: 480px;
-}
-.userProfile li{
+  display:flex;
+  gap: 16px;
+  margin-left: 5%;
+  margin-right: 6%;
   list-style: none;
+}
+.inputHeader .button{
+  padding: 17px 0;
+  width: 46px;
+}
+.button{
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: rgb(4, 4, 77);
+  position: relative;
+  margin-right: 50px;
+  z-index: 10;
+}
+.inputHeader .input{
+  height: 38px;
+  width: 400px;
 }
 .userProfile li a{
   text-decoration: none;
+
   color: black;
-  font-size: 15px;
+}
+.userProfile span{
+  border: 1px solid green;
+  background-color: gray;
+  border-radius: 30px;
+  padding: 8px 12px;
+  font-weight: 400;
+  color: white;
+  font-size: 14px;
 }
 
-.button{
-  background-color:  rgb(2, 2, 56);
-  position: absolute;
-  right: 33.5%;
-  z-index: 10;
-  border-radius: 5px;
-  border: 1px solid;
-  padding: 14px 0;
-  width: 5%; 
-} 
+@media (max-width: 768px) {
+  .container{
+    width: 180px;
+  }
+  .inputHeader{
+    
+    
+  }
+  .nav{
+    align-items: center;
+    justify-items: space-evenly;
+    margin-left: 12%;
+    gap: 19%;
+  }
+  .inputHeader .button {
+    display: none;
+  }
+ 
+  .inputHeader .input{
+    display: none;
+  }
+  .inputHeader .input{
+    width: 49%;
+  }
+}

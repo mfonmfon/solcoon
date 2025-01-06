@@ -1,23 +1,8 @@
 .container{
-  width: 90%;
-  height: 50vh;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-}
-.cardHeader{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   margin-top: 10%;
-  gap: 15px;
+  margin-left: 10%;
+  margin-right: 10%;
 }
-.levels{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cardImage{
-  width: 290px;
-  align-items: center;
-  height: 190px;
+.teamHeader{
+  
 }

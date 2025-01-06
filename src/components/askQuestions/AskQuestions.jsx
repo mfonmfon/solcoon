@@ -4,7 +4,6 @@ import { askQuestionsData } from '../header/AppData'
 import { RxDropdownMenu } from 'react-icons/rx'
 
 const AskQuestions = () => {
-  
   return (
     <div className={AskQuestionStyle.container}>
       <h2>Frequently Asked Questions (FAQs)</h2>
@@ -23,5 +22,4 @@ const AskQuestions = () => {
   </div>
   )
 }
-
 export default AskQuestions
