@@ -21,7 +21,7 @@ const SideBar = () => {
         </ul>
       </div>
       
-      
+      <TechnicianCard />
     </div>
    
   )

@@ -9,13 +9,13 @@
   color:rgb(2, 2, 56) ; 
 }
 .SideBarItems{
-  height: auto !important;
+  height: auto;
   width: 90%;
   padding: 17%;
 }
 .SideBarItems .SideBarItemsList{
-  text-decoration: none !important;
-  list-style: none !important;
+  text-decoration: none;
+  list-style: none;
   display: flex;
   gap: 20px;
   justify-content: center;
