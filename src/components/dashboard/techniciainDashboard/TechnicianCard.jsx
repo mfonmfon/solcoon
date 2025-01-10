@@ -4,11 +4,19 @@ import { TbRating14Plus } from 'react-icons/tb'
 import technicianDashboardData, { socialMediaData } from '../../../components/dashboard/techniciainDashboard/technicianCardData'
 import PictureTwo from '../../../images/dashboardimages/PictureTwo.jpg'
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
+import { useLocation } from 'react-router-dom'
 const TechnicianCard = () => {
+  
   return (
     <div className={TechnicianCardStyle.container}>
      <div className={TechnicianCardStyle.teamHeader}>
-     <h1>Top technicians</h1>
+     <h1>Top technicians,</h1>
+     <div className={TechnicianCardStyle.viewAll} >
+      <p onClick={()=>{
+        
+        window.location.pathname='/view all'
+      }}>View all</p>
+     </div>
      <div className={TechnicianCardStyle.teamContent}>
       {technicianDashboardData.map((data, index)=>{
         return(
@@ -49,6 +57,7 @@ const TechnicianCard = () => {
         )
         })}
      </div>
+     
      </div>
     </div>
   ) 

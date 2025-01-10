@@ -1,59 +1,88 @@
-import React from 'react'
-import UserOptionStyle from '../../styles/UserOptions.module.css'
-import { SearchCheck, SearchIcon, User2Icon, UserCircleIcon, UserIcon, UsersIcon} from 'lucide-react'
-import { PiUserCircleDashedBold } from 'react-icons/pi'
-import { FaUsersViewfinder } from 'react-icons/fa6'
-import Signup from '../../auth/signup/Signup'
-import {Link} from 'react-router-dom'
+import React, { useState } from 'react';
+import UserOptionStyle from '../../styles/UserOptions.module.css';
+import { UserIcon } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+
 const UserOptions = () => {
-  const logo = "Solvas"
-  const optionHeaderText = "Join as a client or technician"
+  const logo = "Solvas";
+  const [role, setRole] = useState(''); // State to capture selected role
+  const navigate = useNavigate();
+
+  const handleCreateAccount = () => {
+    if (role) {
+      navigate('/join', { state: { role } }); // Pass role to the signup page
+    } else {
+      alert('Please select an option to continue.');
+    }
+  };
 
   return (
     <div className={UserOptionStyle.container}>
-     <div className={UserOptionStyle.logo}>
-        <h1 className={UserOptionStyle.logoText}>{`${logo}`}</h1>
-    </div>
+      {/* Logo */}
+      <div className={UserOptionStyle.logo}>
+        <h1 className={UserOptionStyle.logoText}>{logo}</h1>
+      </div>
 
-    <div className={UserOptionStyle.content}>
-      <h3>{`Join as a client or technician`}</h3>
+      {/* Content */}
+      <div className={UserOptionStyle.content}>
+        <h3 style={{fontSize: '1.5rem'}}>Join as a client or technician</h3>
 
-      <div className={UserOptionStyle.contentSub}>
-        <div className={UserOptionStyle.optionCard}>
+        {/* Options */}
+        <div className={UserOptionStyle.contentSub}>
+          <div
+            className={UserOptionStyle.optionCard}
+            onClick={() => setRole('client')}
+          >
+            <UserIcon style={{ marginTop: '10px' }} />
+            <input
+              type="radio"
+              name="role"
+              checked={role === 'client'}
+              readOnly
+              className={UserOptionStyle.radio}
+            />
+            <p className={UserOptionStyle.optionText}>
+              I'm a client hiring for a technician
+            </p>
+          </div>
 
-        <UserIcon style={{ marginTop:"10px"}}/>
-          <input  style={{marginLeft:"95px", marginBottom:"20px"}}
-           type='radio' name='option' 
-           className={UserOptionStyle}/>
-          <p style={{fontSize:"18px", width:"60%", 
-            marginTop:"5px", 
-            fontWeight:"500"}}>{`I'm  client hiring for technician`}</p>
+          <div
+            className={UserOptionStyle.optionCard}
+            onClick={() => setRole('technician')}
+          >
+            <UserIcon style={{ marginTop: '10px' }} />
+            <input
+              type="radio"
+              name="role"
+              checked={role === 'technician'}
+              readOnly
+              className={UserOptionStyle.radio}
+            />
+            <p className={UserOptionStyle.optionText}>
+              I'm a technician looking for work
+            </p>
+          </div>
         </div>
 
-        <div className={UserOptionStyle.optionCard}>
-          <UserIcon style={{ marginTop:"10px"}}/>
-           <input id='option'  style={{marginLeft:"95px", marginBottom:"20px"}} 
-           type='radio' name='option' 
-           className={UserOptionStyle} />
-          <p style={{fontSize:"18px", width:"89%", marginTop:"5px",
-             marginLeft:"10px", fontWeight:"500"}}>{`I'm a technician looking for work`}</p>
+        {/* Buttons */}
+        <div className={UserOptionStyle.buttonContainer}>
+          <button
+            className={UserOptionStyle.btnOne}
+            onClick={handleCreateAccount}
+          >
+            {role === 'client'
+              ? 'Register as a Client'
+              : role === 'technician'
+              ? 'Register as a Technician'
+              : 'Create Account'}
+          </button>
+          <p className={UserOptionStyle.account}>
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
         </div>
       </div>
-      <div className={UserOptionStyle.buttonContainer}>
-        <div className='buttonOption'>
-        {/* '/join' */}
-          <button className={UserOptionStyle.btnOne}>
-           <a  href={'/join'}>Create Account</a></button>
-         <p className={UserOptionStyle.account}>
-          Already have a new account ?
-          <a href={'/login'}>{`Login`}</a>
-         </p>
-        </div>
-      </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default UserOptions
-
+export default UserOptions;

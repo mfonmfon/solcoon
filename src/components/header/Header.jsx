@@ -15,7 +15,9 @@ const Header = () => {
       <nav className={HeaderStyles.headerContainer}>
         {/* Logo */}
         <div className={HeaderStyles.headerLogo}>
-          <Link to={'/'}><img src={HeaderLogo} alt="Logo" /></Link>
+         <h1 style={{fontSize: '2rem'}} onClick={()=>{
+          window.location.pathname = '/'
+         }}>Solcon</h1>
         </div>
 
         {/* Mobile Toggle Button */}

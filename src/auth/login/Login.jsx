@@ -1,39 +1,52 @@
 import React, {useState} from 'react'
 import LoginStyle from "../../auth/login/Login.module.css"
 import { Link } from 'react-router-dom'
-
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword]= useState("")
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleEmailSubmit = (event)=>{
-    event.preventDefault()
-  }
-  const handlePasswordSubmit=(event)=>{
-    event.preventDefault()
-  }
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-  const handleLoginFormSubmit = async(event)=>{
-    event.preventDefault()
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
-    try{
-      const responseLoginFormData = await fetch('',{
-        method:'POST',
-        header:{
-          'Content-type': 'application/json'
+  const handleLoginFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8080/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(
+        body: JSON.stringify({
           email,
-          password,
-        )
+          password
+           }),
       });
-      if(!responseLoginFormData.ok)throw new Error("Error")
-        const result = await responseLoginFormData.json()
-      alert("Success", result)
-    }catch(error){
-      console.error("error")
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem("userId", JSON.stringify(data.id)); // Save user ID to localStorage
+        toast.success("Login successful", {
+          onClose: () => navigate("/dashboard"), // Redirect to dashboard after the toast
+          autoClose: 3000,
+        });
+      } else {
+        toast.error("Invalid email or password. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+      toast.error("An error occurred. Please try again later.");
     }
-  }
+  };
    return (
     <div className={LoginStyle.loginContainer}>
       <h4 className={LoginStyle.backToHomePage}><Link to={'/'}>back</Link></h4>
@@ -49,7 +62,7 @@ const Login = () => {
          placeholder=''
          name='email'
          value={email}
-         onChange={handleEmailSubmit}
+         onChange={handlePasswordChange}
          required
          />
         </div>
@@ -59,7 +72,7 @@ const Login = () => {
         <input type='password' 
          placeholder='password'
          name='password'
-         onChange={handlePasswordSubmit}
+         onChange={handleEmailChange}
          value={password}
          required
          />

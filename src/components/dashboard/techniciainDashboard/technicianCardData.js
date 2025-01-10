@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 const technicianDashboardData =
 [
   {
-    technicianAppName: "Mfon Mfon",
+    technicianAppName: "certified",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -14,7 +14,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
+    technicianAppName: "Certified",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -24,7 +24,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
+    technicianAppName: "Certifed",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -34,7 +34,26 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
+    technicianAppName: "Certified",
+    technicianImageUrl:PictureTwo ,
+    description: "I will repair your solar system",
+    techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
+    technicianEmail: "mfonm579@gmail.com",
+    techncianPhoneNumber: "08123115688",
+    locationIcon:<FaLocationDot/>,
+    tickingIcon: <FaCircleCheck/>
+  },
+  {
+    technicianAppName: "Certified",
+    technicianImageUrl:PictureTwo ,
+    description: "I will repair your solar system",
+    techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
+    technicianEmail: "mfonm579@gmail.com",
+    techncianPhoneNumber: "08123115688",
+    locationIcon:<FaLocationDot/>,
+    tickingIcon: <FaCircleCheck/>
+  },{
+    technicianAppName: "Certified",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",

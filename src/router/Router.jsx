@@ -10,6 +10,7 @@ import CongratulationMessage from "../components/onboarding/CongratulationMessag
 import TechnicianDashboard from "../components/dashboard/techniciainDashboard/TechnicainDashboard"
 import Order from "../components/order/Order"
 import TechnicianProfile from "../components/userProfile/technicianProfile/TechnicianProfile"
+import EditProfile from "../components/editProfile/EditProfile"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -65,6 +66,10 @@ const SOLVAS_ROUTES = [
   {
     path: '/technicianprofile',
     element:<TechnicianProfile/>
+  },
+  {
+    path: '/editprofile',
+    element:<EditProfile/>
   },
 
 ]

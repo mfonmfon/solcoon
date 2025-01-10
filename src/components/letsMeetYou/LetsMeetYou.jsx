@@ -48,7 +48,6 @@ const LetsMeetYou = () => {
      </div>
     </div>
     </div>
-
 </div>
   )
 }

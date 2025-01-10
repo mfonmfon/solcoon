@@ -2,7 +2,7 @@
   width: 100%;
   height: 60vh;
   /* background-color:rgb(3, 8, 66); */
-  background-image:url(../images/heroImages/FirstSolarImage.jpg);
+  background-image:url(../images/heroImages/NewHeroPicture.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -126,7 +126,7 @@
   }
 
   .heroWrapper h2 {
-    font-size: 17px;
+    font-size: 10px;
     line-height: 28px;
     max-width: 100%;
   }

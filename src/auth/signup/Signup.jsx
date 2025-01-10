@@ -1,125 +1,182 @@
-import React, {useState, useRef, useEffect} from 'react'
-import SignupStyle from '../../auth/signup/Signup.module.css'
-import SecondSolarImage from '../../images/heroImages/SecondSolarImage.jpg'
+import React, { useState } from 'react';
+import SignupStyle from '../../auth/signup/Signup.module.css';
+import SecondSolarImage from '../../images/heroImages/SecondSolarImage.jpg';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+const generatedIDs = new Set(); 
+function generateRandomID() {
+  let id;
+  
+  // Keep generating a random ID until it's unique
+  do {
+    id = Math.floor(Math.random() * 1000000);  // Generate a random number
+  } while (generatedIDs.has(id));  // Check if the ID already exists in the Set
+  
+  generatedIDs.add(id);  // Add the new unique ID to the Set
+  
+  return id;
+}
+
 
 const Signup = () => {
-  // const [errorMessage, setErrorMessage] = useRef()
-  const[firstName, setFirstsName] = useState("");
-  const[lastName, setLastName] = useState("");
-  const[email, setEmail] = useState("");
-  const[password, setPassword] = useState("");
-  const[country, setCountry] = useState("");
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  const handleFirstName = (event) =>{
-    event.preventDefault()
-  }
-  const handleLastName = (event)=>{
-    event.preventDefault()
-  }
-  const handleEmail = (event)=>{
-    event.preventDefault()
-  }
+  const [formData, setFormData] = useState({
+    id: generateRandomID(),
+    subscriptionStatus: 'FREE',
+    userType: 'TECHNICIAN',
+    subscriptionType: 'MONTHLY',
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    password: '',
+    location: 'sabo, yaba',
+    nin: '0982654376',
+    isLoggedIn: 'ONLINE',
+  });
+  console.log("Check here for the error",formData)
+  const handleFormData = (e) => { const { name, value } = e.target;
+   setFormData({ ...formData, [name]: value }
 
-  const handlePassword = (event)=>{
-    event.preventDefault()
-  }
-  const handleCountry =(event)=>{
-    event.preventDefault()
-  }
-  const handleFormSubmit = async (event)=>{
-    event.preventDefault()
-    try{
-      const responseData = await fetch('',
-        {
-          method: "POST",
-          headers:{
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(
-            firstName,
-            lastName,
-            email,
-            password
+   )};
+   
+  const handleSignupSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      console.log(formData)
+      const response = await fetch('http://localhost:8080/register-technician', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Correctly serialize formData
+      });
 
-          ),
+      // Check if the request was successful
+      if (response.ok) {
+        const data = await response.json(); // Parse response JSON
+        localStorage.setItem('userId', JSON.stringify(data.id)); // Save firstName from the parsed data
+        toast.success('Signup successful', {
+          onClose: () => navigate("/technicianDashboard"), // Navigate after toast closes
+          autoClose: 2000, // 3-second delay for the toast
         });
-        if(!responseData.ok)throw new Error(`ERROR:${responseData.statusText}`);
-         console.log("Error here check am again");
-          const result = await responseData.json();
-          alert(`Success ${result.statusText}`)
         
-    }catch(error){
-      console.error(`Error creating this user`)
-  }
-  }
+      } else {
+        const data = await response.json(); // Parse error response JSON
+        toast.error(data.error, 'Signup failed. Please try again.')
+        setError(data.error,'Signup failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error during signup:', error);
+      toast.error('Failed to signup. Please try again later.')
+      setError('An unexpected error occurred. Please try again later.');
+    }
+  };
+
   return (
-      <div className={SignupStyle.SignupContainer}>
+    <div className={SignupStyle.SignupContainer}>
       <div className={SignupStyle.SignupRightSide}>
         <div className={SignupStyle.SignupRightSideContent}>
-          <img className={SignupStyle.SignupImage} src={SecondSolarImage} alt="Background" />
+          <img
+            className={SignupStyle.SignupImage}
+            src={SecondSolarImage}
+            alt="Background"
+          />
         </div>
       </div>
 
       <div className={SignupStyle.SignupLeftSide}>
         <div className={SignupStyle.SignupContent}>
+          <div className={SignupStyle.SignupText}>
+            {error && (
+              <p style={{backgroundColor:'black', color:'white',
+               fontSize:'10px', borderRadius:'5px', padding:'5px'}} 
+                className={SignupStyle.errorMessage ? 'error': 'offScreen'} aria-live="assertive">
+                {error}
+              </p>
+            )}
+            <p>Signup to find clients that need your service</p>
+          </div>
+
+          <form onSubmit={handleSignupSubmit} id={SignupStyle.formFilling}>
+            <div className={SignupStyle.SignupForms}>
+              {/* <label htmlFor="firstName">First Name</label> */}
+              <input
+                type="text"
+                placeholder="First name"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleFormData}
+                required
+              />
+            </div>
+
+            <div className={SignupStyle.SignupForms}>
+              {/* <label htmlFor="lastName">Last Name</label> */}
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleFormData}
+                required
+              />
+            </div>
+
+            <div className={SignupStyle.SignupForms}>
+              {/* <label htmlFor="email">Email</label> */}
+              <input
+                type="email"
+                name="email"
+                placeholder="example@gmail.com"
+                value={formData.email}
+                onChange={handleFormData}
+                required
+              />
+            </div>
+
+            <div className={SignupStyle.SignupForms}>
+            <label htmlFor="phoneNumber"></label>
+            <input
+              type="tel" // "tel" is the correct type for phone number inputs
+              id="phoneNumber"
+              name="phoneNumber"
+              placeholder="+234"
+              value={formData.phoneNumber}
+              onChange={handleFormData}
+              pattern="^\+?\d{1,15}$" // Regex pattern for validation
+              required
+            />
+            </div>
+
+            <div className={SignupStyle.SignupForms}>
+              {/* <label htmlFor="password">Password</label> */}
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleFormData}
+                required
+              />
+            </div>
+
             
-      <div className={SignupStyle.SignupText}>
-        <p  className={SignupStyle.errorMessage ? "errorMessage": "offscreen"} aria-live='assertive'>
-        </p>
-      <p>{`Signup to find clients that needs your service`}</p>
+
+            <button onClick={handleSignupSubmit} className={SignupStyle.Button} type="submit">
+              Signup
+            </button>
+          </form>
+        </div>
       </div>
-
-  <form onChange={handleFormSubmit} id={SignupStyle.formFilling} >
-    <div className={SignupStyle.SignupForms}>
-      <label htmlFor='firstName' ></label>
-    <input type="text"
-       placeholder="First Name"
-       name='firstNamae'
-       onChange={handleFirstName}
-       required
-      />
+      <ToastContainer/>
     </div>
-    <div className={SignupStyle.SignupForms}>
-      <label htmlFor='lastName' ></label>
-      <input type="text"
-      name='lastNamae'
-      placeholder="Last Name" 
-      onChange={handleLastName}
-      required
-        />
-    </div>
-    <div className={SignupStyle.SignupForms}>
-      <label htmlFor='email'></label>
-      <input 
-      type="email" 
-      name='email' 
-      placeholder="example@gmail.com"
-      onChange={handleEmail}
-      required
-        />
-    </div>
+  );
+};
 
-    <div className={SignupStyle.SignupForms}>
-      <label htmlFor='password'></label>
-      <input
-      type="password" 
-      name='password' 
-      placeholder="Password"
-      onChange={handlePassword}
-      required
-      />
-    
-    </div>
-
-    <button  onChange={handleFormSubmit} className={SignupStyle.Button} type="submit">
-      <a href='/technicianDashboard'>Signup</a> 
-    </button>
-  </form>
-      </div>
-      </div>
-
-  </div>
-  )
-}
-
-export default Signup
+export default Signup;

@@ -7,6 +7,7 @@ import { RiDropdownList } from 'react-icons/ri'
 import { ArrowDownLeft, HomeIcon, LogOut, LogOutIcon, Settings2Icon, SettingsIcon, UserRoundCheckIcon } from 'lucide-react'
 import { IoNotificationsCircleOutline } from 'react-icons/io5'
 import { MdExplore } from 'react-icons/md'
+import technicianImageOne from '../../images/sidebarimages/TechnicianImageOne.jpeg'
 const navBarData = [
 
   {
@@ -231,4 +232,33 @@ export const SideBarData =[
     userProfile:"Log Out",
     path: "/logout"
   },
+]
+
+export const sliderData = [
+  {
+    id: 0,
+    image: technicianImageOne,
+    title: "Welcome onboard"
+  },
+  {
+    id: 0,
+    image: technicianImageOne,
+    title: "Welcome onboard"
+  },
+  {
+    id: 0,
+    image: technicianImageOne,
+    title: "Welcome onboard"
+  },
+  {
+    id: 0,
+    image: technicianImageOne,
+    title: "Welcome onboard"
+  },
+  {
+    id: 0,
+    image: technicianImageOne,
+    title: "Welcome onboard"
+  },
+  
 ]

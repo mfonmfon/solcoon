@@ -7,7 +7,7 @@ const TechnicianDashboard = ()=>{
   return (
     <div className=''>
       <TechnicianHeader/>
-      {/* <SideBar/> */}
+      {/* <TechnicianHeroection/> */}
       <FindTechnicianCard/>
      
     </div>

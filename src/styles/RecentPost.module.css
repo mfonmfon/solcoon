@@ -1,5 +1,6 @@
 .container{
-  width: 790px;
+  width: 90%;
+  align-items: center;
 }
 .title {
   color: darkblue;
@@ -45,7 +46,6 @@
   display: flex;
   color: rgb(150, 146, 146);
 }
-
 .recentPostContent{
   flex-direction: row;
   padding: 4%;

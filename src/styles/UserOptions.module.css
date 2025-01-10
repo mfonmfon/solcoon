@@ -17,6 +17,8 @@
   font-weight: 400;
 }
 .container{
+  align-items: center;
+  margin-left: 10%;
   justify-content: center;
   max-width: 100%;
   background-position: center;
