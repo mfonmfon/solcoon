@@ -206,7 +206,7 @@ export const SideBarData =[
     id: 0,
     icons:<HomeIcon size={15}/>,
     userProfile:"Home",
-    path: "/home"
+    path: "/techniciandashboard"
   },
   {
     id: 1,

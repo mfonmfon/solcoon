@@ -23,7 +23,7 @@ const Header = () => {
         {/* Mobile Toggle Button */}
         <div className={HeaderStyles.appToggle}>
           <button onClick={toggleMenu}>
-            {menuActive ? '' : '☰'}
+            {menuActive ? 'x' : '☰'}
           </button>
         </div>
 
@@ -38,7 +38,6 @@ const Header = () => {
           ))}
           <button className={HeaderStyles.joinButton}>
             <Link to={'/option'}>Join</Link>
-
             </button>
         </ul>
       </nav>

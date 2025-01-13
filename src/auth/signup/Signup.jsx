@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SignupStyle from '../../auth/signup/Signup.module.css';
-import SecondSolarImage from '../../images/heroImages/SecondSolarImage.jpg';
+import SecondSolarImage from '../../images/signup/SignupImage.jpg';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,7 +30,7 @@ const Signup = () => {
     subscriptionStatus: 'FREE',
     userType: 'TECHNICIAN',
     subscriptionType: 'MONTHLY',
-    firstName: '',
+    firstName: ' ',
     lastName: '',
     phoneNumber: '',
     email: '',
@@ -60,7 +60,8 @@ const Signup = () => {
       // Check if the request was successful
       if (response.ok) {
         const data = await response.json(); // Parse response JSON
-        localStorage.setItem('userId', JSON.stringify(data.id)); // Save firstName from the parsed data
+        localStorage.setItem('firstName', JSON.stringify(formData.firstName));
+        localStorage.setItem('id', JSON.stringify(formData.id));
         toast.success('Signup successful', {
           onClose: () => navigate("/technicianDashboard"), // Navigate after toast closes
           autoClose: 2000, // 3-second delay for the toast
@@ -82,11 +83,12 @@ const Signup = () => {
     <div className={SignupStyle.SignupContainer}>
       <div className={SignupStyle.SignupRightSide}>
         <div className={SignupStyle.SignupRightSideContent}>
-          <img
+        <div>
+        <img
             className={SignupStyle.SignupImage}
             src={SecondSolarImage}
-            alt="Background"
-          />
+            alt="Background"/>
+        </div>
         </div>
       </div>
 

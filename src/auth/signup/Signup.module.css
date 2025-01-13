@@ -114,3 +114,11 @@ button[type="submit"]:hover {
   padding-right:30px;
 
 }
+
+@media (max-width: 768px) {
+  .logincontainer{
+    display: block;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}

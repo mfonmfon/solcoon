@@ -13,7 +13,6 @@ const TechnicianCard = () => {
      <h1>Top technicians,</h1>
      <div className={TechnicianCardStyle.viewAll} >
       <p onClick={()=>{
-        
         window.location.pathname='/view all'
       }}>View all</p>
      </div>

@@ -6,9 +6,11 @@ import FindTechnicianCard from '../../../components/dashboard/techniciainDashboa
 const TechnicianDashboard = ()=>{
   return (
     <div className=''>
-      <TechnicianHeader/>
+      {/* <TechnicianHeader/> */}
       {/* <TechnicianHeroection/> */}
-      <FindTechnicianCard/>
+      {/* <FindTechnicianCard/> */}
+      
+      <SideBar/>
      
     </div>
   )
