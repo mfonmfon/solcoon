@@ -6,7 +6,6 @@ import HeaderLogo from '../../images/logo/SolvasLogo.png';
 
 const Header = () => {
   const [menuActive, setMenuActive] = useState(false);
-
   const toggleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -16,13 +15,15 @@ const Header = () => {
       <nav className={HeaderStyles.headerContainer}>
         {/* Logo */}
         <div className={HeaderStyles.headerLogo}>
-          <Link to={'/'}><img src={HeaderLogo} alt="Logo" /></Link>
+         <h1 style={{fontSize: '2rem'}} onClick={()=>{
+          window.location.pathname = '/'
+         }}>Solcon</h1>
         </div>
 
         {/* Mobile Toggle Button */}
         <div className={HeaderStyles.appToggle}>
           <button onClick={toggleMenu}>
-            {menuActive ? '✖️' : '☰'}
+            {menuActive ? 'x' : '☰'}
           </button>
         </div>
 
@@ -36,9 +37,7 @@ const Header = () => {
             </li>
           ))}
           <button className={HeaderStyles.joinButton}>
-         
             <Link to={'/option'}>Join</Link>
-
             </button>
         </ul>
       </nav>

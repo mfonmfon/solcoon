@@ -64,7 +64,14 @@ button[type="submit"]  {
   font-size: 1rem;
   margin-top: 10px;
   transition: 0.3s ease;
- 
+}
+.SignupText .errorMessage p{
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: black;
+  font-size: 12px;
+  margin-top: 5px;
 }
 button a{
   color: white;
@@ -104,6 +111,14 @@ button[type="submit"]:hover {
   background-size: cover;
   object-fit: cover;
   background-position: center;
-  padding-right:30px;;
+  padding-right:30px;
 
+}
+
+@media (max-width: 768px) {
+  .logincontainer{
+    display: block;
+    flex-direction: column;
+    overflow: hidden;
+  }
 }

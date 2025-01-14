@@ -1,13 +1,14 @@
 .heroSectionContainer{
-  width: 80%;
-  height: 65vh;
-  background-color:rgb(3, 8, 66);
+  width: 100%;
+  height: 60vh;
+  /* background-color:rgb(3, 8, 66); */
+  background-image:url(../images/heroImages/NewHeroPicture.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 20px;
+  /* border-radius: 20px;
   margin-top: 3%;
-  margin-left: 10%;
+  margin-left: 10%; */
 }
 .secondHeroImages .imageTwo{
   display: none;
@@ -20,15 +21,32 @@
   position: absolute;
   text-align: center;
   transform: translate3d(50%, 50%);
-  top: 25%;
+  top: 20%;
   left: 25%;
 }
 .heroWrapper h2{
-  max-width: 670px;
+  max-width: 678px;
   line-height: 50px;
   color: white;
-  font-size: 45px;
+  font-size: 46px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.button{
+  gap:30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+}
+.button button {
+  width: 120px;
+  padding:16px 0;
+  color: white;
+  background-color: darkblue;
+  border-radius: 5px;
+  border: 1px transparent;
+  font-size: 14px;
+
 }
 .heroSearchInput{
   width: 550px;
@@ -51,14 +69,17 @@
 /* Tablet Devices (768px and below) */
 @media (max-width: 768px) {
   .heroSectionContainer {
-    width: 90%;
-    height: 60vh;
+    width: 70%;
+    height: 40vh;
     margin: 5% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .heroWrapper {
-    top: 30%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -30%);
+    transform: translate(-50%, 30%);
     text-align: center;
   }
   .heroWrapper h2 {
@@ -73,6 +94,7 @@
     font-size: 12px;
   }
 
+
   .searchIcon {
     right: 10%;
     top: 55%;
@@ -85,21 +107,15 @@
     justify-content: center;
     gap: 10px;
   }
-
-  .imageOne,
-  .imageTwo {
-    width: 120px;
-    height: 120px;
-  }
 }
 
 /* Mobile Devices (480px and below) */
 @media (max-width: 480px) {
   .heroSectionContainer {
-    width: 95%;
-    height: auto;
+    width: 90%;
+    height: 50%;
     margin: 5% auto;
-    padding: 20px 0;
+    padding: 120px 0;
   }
 
   .heroWrapper {
@@ -110,21 +126,21 @@
   }
 
   .heroWrapper h2 {
-    font-size: 24px;
-    line-height: 32px;
-    max-width: 90%;
+    font-size: 10px;
+    line-height: 28px;
+    max-width: 100%;
   }
 
   .heroSearchInput {
-    width: 90%;
-    padding: 12px;
+    width: 251px;
+    padding: 15px;
     font-size: 12px;
   }
 
   .searchIcon {
-    right: 8%;
-    top: 55%;
-    font-size: 30px;
+    right: 1%;
+    top: 5%;
+    font-size: 26px;
   }
 
   .firstHeroImages,
@@ -136,7 +152,7 @@
 
   .imageOne,
   .imageTwo {
-    width: 100px;
-    height: 100px;
+    width: 0px;
+    height: 0;
   }
 }

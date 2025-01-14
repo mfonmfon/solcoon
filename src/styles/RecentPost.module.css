@@ -1,0 +1,81 @@
+.container{
+  width: 90%;
+  align-items: center;
+}
+.title {
+  color: darkblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.postHeader:hover{
+  color:black;
+}
+.postHeader{
+  color:  rgb(90, 199, 88);
+  transition: 2s ease-out;
+}
+.timeDate{
+  color: gray;
+  font-weight: 500;
+  font-size: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.recentPostCard{
+  border: 1px solid rgba(137, 135, 135, 0.2);
+  border-radius: 9px;
+  padding: 16px 16px ;
+  margin-top:17px;
+  background-color: rgba(3, 3, 88, 0.902);
+  transition: 2s;
+}
+.recentPostCard:hover{
+  background-color: white;
+}
+.descriptionHeader{
+  width: 550px;
+  font-size: 13px;
+  color: rgb(147, 144, 144);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+}
+.icons{
+  gap: 10px;
+  align-items: center;
+  display: flex;
+  color: rgb(150, 146, 146);
+}
+.recentPostContent{
+  flex-direction: row;
+  padding: 4%;
+  gap: 35px;
+  margin-top: 19%;
+  /* color: ; */
+}
+.categoryHeader{
+  /* width: 20%; */
+}
+.categoryHeader ul{
+  display: flex;
+  list-style: none;
+  align-items:center;
+  justify-content: left;
+  gap: 10px;
+  padding: 2px;
+}
+.categoryHeader ul li{
+  text-decoration: none;
+  border-radius:5px;
+  background-color: rgb(207, 206, 206);
+  color: rgb(52, 50, 50);
+  font-weight: 500;
+  padding: 3px 3px;
+  font-size: 10px; 
+}
+.paymentHeader{
+  color: gray;
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}

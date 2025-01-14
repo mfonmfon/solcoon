@@ -1,0 +1,32 @@
+.container{
+
+  width: 70%;
+  margin-left: 15%;
+  justify-content: center;
+  align-items: center;
+}
+.container h2{
+  color: #0e0438;
+  text-align: center;
+  font-size: 37px;
+}
+.splitHeader{
+  margin-top: 7%;
+}
+.questionSpit{
+  border-radius: 10px;
+  padding: 8px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.questionSpit h1{
+  color :#000;
+  font-size: 19px;
+  font-family:'Arial, sans-serif';
+  font-weight: 500;
+}
+
+.listItems{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

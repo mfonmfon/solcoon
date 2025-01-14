@@ -1,0 +1,14 @@
+.container{
+  overflow: hidden;
+  width: 100%;
+  height: 36vh;
+  background-position: center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image{
+  width: 100%; 
+}
+.text{
+  color: white;
+}

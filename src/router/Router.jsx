@@ -7,6 +7,11 @@ import Signup from "../auth/signup/Signup"
 import UserOptions from "../auth/UserOptions/UserOptions"
 import LetsMeetYou from "../components/letsMeetYou/LetsMeetYou"
 import CongratulationMessage from "../components/onboarding/CongratulationMessage"
+import TechnicianDashboard from "../components/dashboard/techniciainDashboard/TechnicainDashboard"
+import Order from "../components/order/Order"
+import TechnicianProfile from "../components/userProfile/technicianProfile/TechnicianProfile"
+import EditProfile from "../components/editProfile/EditProfile"
+import TechnicianAssessment from "../components/assessment/TechnicianAssessment"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -50,6 +55,26 @@ const SOLVAS_ROUTES = [
   {
     path: '/congratulations',
     element:<CongratulationMessage/>
+  },
+  {
+    path: '/technicianDashboard',
+    element:<TechnicianDashboard/>
+  },
+  {
+    path: '/order',
+    element:<Order/>
+  },
+  {
+    path: '/technicianprofile',
+    element:<TechnicianProfile/>
+  },
+  {
+    path: '/editprofile',
+    element:<EditProfile/>
+  },
+  {
+    path: '/technicianassessment',
+    element:<TechnicianAssessment/>
   },
 
 ]

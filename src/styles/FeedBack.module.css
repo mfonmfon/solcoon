@@ -1,0 +1,39 @@
+.FeedBackContainer{
+  max-width:84%;
+  height: 50vh;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+  top: 10%;
+  background-color: rgba(1, 1, 46, 0.936);
+  border-radius: 10px;
+  transition: 4s;
+}
+.FeedBackContainer:hover{
+  background-color:  rgb(8, 40, 127);
+}
+.content{
+  padding-top: 2%;
+  color: white;
+  line-height: normal;
+}
+.content h1{
+  font-size: 49px;
+  font: 300;
+  font-family: 'Helvetica Neue';
+  padding-top: 10%;
+}
+.content p{
+  text-align: center;
+  font-size: 15px;
+}
+.content button{
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: rgb(24, 79, 228);
+  padding: 15px;
+  width: 100px;
+  margin-left: 36%;
+  align-items: center;
+
+}
