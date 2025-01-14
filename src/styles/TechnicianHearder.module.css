@@ -1,26 +1,12 @@
-.header {
+.headerContainer{
+ max-width: 300px;
+}
+.headerContent{
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
   background-color: #fff;
-  border-bottom: 1px solid #ccc;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.search-bar {
-  width: 200px;
-  padding: 5px;
-}
-
-.icons {
-  display: flex;
-  gap: 15px;
-}
-
-.icon {
-  font-size: 24px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }

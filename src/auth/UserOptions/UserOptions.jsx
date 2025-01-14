@@ -2,17 +2,21 @@ import React, { useState } from 'react';
 import UserOptionStyle from '../../styles/UserOptions.module.css';
 import { UserIcon } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const UserOptions = () => {
   const logo = "Solvas";
   const [role, setRole] = useState(''); // State to capture selected role
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Navigation hook
 
   const handleCreateAccount = () => {
-    if (role) {
+    if (role === 'technician') {
       navigate('/join', { state: { role } }); // Pass role to the signup page
-    } else {
-      alert('Please select an option to continue.');
+    }else if(role === 'client'){
+      navigate('/clientsignup',{state:{role}})
+    }else {
+      toast.error('Please select an option to continue.');
     }
   };
 
@@ -81,6 +85,7 @@ const UserOptions = () => {
           </p>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

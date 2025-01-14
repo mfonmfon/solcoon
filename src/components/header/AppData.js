@@ -155,21 +155,46 @@ export const postCardData = [
 ]
 
 export const technicianData = [
+
+  {
+    id: 0,
+    path:"/order",
+    order: "Earning"
+   
+  },
+  {
+    id: 0,
+    path:"/order",
+    order:"Find work",
+  },
+
+  {
+    id: 0,
+    path:"/order",
+    order:"Messages",
+  },
+  {
+    id: 0,
+    path:"/order",
+    order:"See Reviews",
+  },
+]
+
+export const secondTechnicianData = [
   {
     id: 0,
     path:"/order",
     order:"Order",
   },
-  // {
-  //   id: 0,
-  //   path:"/order",
-   
-  // },
-  // {
-  //   id: 0,
-  //   path:"/order",
-  //   order:"Order",
-  // },
+  {
+    id: 0,
+    path:"/order",
+    order:"Settings",
+  },
+ {  id: 0,
+    path:"/order",
+    order:"Logout",
+  },
 ]
 
 export const askQuestionsData =[
@@ -219,6 +244,12 @@ export const SideBarData =[
     icons:<MdExplore size={15}/>,
     userProfile:"Explore",
     path: "/home"
+  },
+  {
+    id: 2,
+    icons:<MdExplore size={15}/>,
+    userProfile:"Earnings",
+    path: "/earnings"
   },
   {
     id: 3,

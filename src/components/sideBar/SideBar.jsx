@@ -27,6 +27,7 @@ const SideBar = () => {
 
       <div className={SideBarStyles.profileSection}>
         {/* <TechnicianCard /> */}
+        <h1>Hello</h1>
       </div>
     </div>
   );

@@ -12,17 +12,28 @@ const TechnicianHeader = () => {
 
   const handleSearchInput =(event)=>{
     event.preventDefault();
-    setSearch()
+    setSearch(search)
   }
 
   return (
-    <div className="header">
-      <div className="logo">InstaClone</div>
-      <input type="text" placeholder="Search..." className="search-bar" />
-      <div className="icons">
-        <span className="icon">🔔</span>
-        <span className="icon">✉️</span>
-        <span className="icon">👤</span>
+    <div className={TechnicianHeaderStyle.headerContainer}>
+      <div className={TechnicianHeaderStyle.headerContent}>
+       <div className={TechnicianHeaderStyle.navHeader}>
+        <div className={TechnicianHeaderStyle.dashboardLogo}>
+          <h2>Solcon</h2>
+        </div>
+       <ul className={TechnicianHeaderStyle.navBarItems}>
+          {technicianData.map((items, index)=>{
+            return(
+              <li key={index}>
+                <Link to={items.path}>{items.order}</Link>
+              </li>
+            )})}
+        </ul>
+        <div className={TechnicianHeaderStyle.secondContentLink}>
+          <h1>Check</h1>
+        </div>
+       </div>
       </div>
     </div>
   )

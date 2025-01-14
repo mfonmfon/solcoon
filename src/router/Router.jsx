@@ -11,6 +11,7 @@ import TechnicianDashboard from "../components/dashboard/techniciainDashboard/Te
 import Order from "../components/order/Order"
 import TechnicianProfile from "../components/userProfile/technicianProfile/TechnicianProfile"
 import EditProfile from "../components/editProfile/EditProfile"
+import TechnicianAssessment from "../components/assessment/TechnicianAssessment"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -70,6 +71,10 @@ const SOLVAS_ROUTES = [
   {
     path: '/editprofile',
     element:<EditProfile/>
+  },
+  {
+    path: '/technicianassessment',
+    element:<TechnicianAssessment/>
   },
 
 ]

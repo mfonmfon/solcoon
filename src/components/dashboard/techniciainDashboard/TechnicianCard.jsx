@@ -20,7 +20,6 @@ const TechnicianCard = () => {
       {technicianDashboardData.map((data, index)=>{
         return(
           <div className={TechnicianCardStyle.box} key={index}>
-            <button>{data.technicianAppName}</button>
             <div className={TechnicianCardStyle.details}>
               <div className={TechnicianCardStyle.image}>
               <img className={TechnicianCardStyle} src={data.technicianImageUrl} alt='' />

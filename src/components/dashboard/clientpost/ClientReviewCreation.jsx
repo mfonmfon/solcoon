@@ -1,14 +1,20 @@
 import React, {useState} from 'react'
 import CreateReviewStyles from '../../../styles/CreateReviews.module.css'
+// import {FiveStarRatingIcon} from 'react-icons'
 const ClientReviewCreation = () => {
-  const createdAt = new Date().getDay().toString();
-  const [formData, setFormData] = useState()
+  const createdAt = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate();
+  const [formData, setFormData] = useState({
+    reviewCount: 0,
+    reviewText: '',
+    createdAt: createdAt
+  })
   return (
     <div className={CreateReviewStyles}>
       <div >
         <div>
-          <form>
-            <input type='range'
+          <form> 
+            {/* <FiveStarRatingIcon/>  */}
+            <input type=''
             className='reviewCount'
             placeholder='reviews count'
             name='range'

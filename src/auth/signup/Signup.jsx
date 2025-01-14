@@ -24,7 +24,7 @@ function generateRandomID() {
 const Signup = () => {
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     id: generateRandomID(),
     subscriptionStatus: 'FREE',
@@ -35,7 +35,7 @@ const Signup = () => {
     phoneNumber: '',
     email: '',
     password: '',
-    location: 'sabo, yaba',
+    location: '',
     nin: '0982654376',
     isLoggedIn: 'ONLINE',
   });
@@ -47,9 +47,10 @@ const Signup = () => {
    
   const handleSignupSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true) //Start loading the page
     try {
       console.log(formData)
-      const response = await fetch('http://localhost:8080/register-technician', {
+      const response = await fetch('http://localhost:8082/register-technician', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ const Signup = () => {
         localStorage.setItem('firstName', JSON.stringify(formData.firstName));
         localStorage.setItem('id', JSON.stringify(formData.id));
         toast.success('Signup successful', {
-          onClose: () => navigate("/technicianDashboard"), // Navigate after toast closes
+          onClose: () => navigate("/techniciandashboard"), // Navigate after toast closes
           autoClose: 2000, // 3-second delay for the toast
         });
         
@@ -76,11 +77,18 @@ const Signup = () => {
       console.error('Error during signup:', error);
       toast.error('Failed to signup. Please try again later.')
       setError('An unexpected error occurred. Please try again later.');
+    }finally{
+      setIsLoading(false)
     }
   };
 
   return (
     <div className={SignupStyle.SignupContainer}>
+      {isLoading &&(
+        <div className={SignupStyle.loaderOverlay}>
+          <div className={SignupStyle.load}></div>
+        </div>
+      )}
       <div className={SignupStyle.SignupRightSide}>
         <div className={SignupStyle.SignupRightSideContent}>
         <div>
@@ -110,7 +118,7 @@ const Signup = () => {
               {/* <label htmlFor="firstName">First Name</label> */}
               <input
                 type="text"
-                placeholder="First name"
+                placeholder="Firstname"
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleFormData}
@@ -141,6 +149,20 @@ const Signup = () => {
                 required
               />
             </div>
+
+            
+            <div className={SignupStyle.SignupForms}>
+              {/* <label htmlFor="location">Location</label> */}
+              <input
+                type="text"
+                name="location"
+                placeholder="Enter location"
+                value={formData.location}
+                onChange={handleFormData}
+                required
+              />
+            </div>
+
 
             <div className={SignupStyle.SignupForms}>
             <label htmlFor="phoneNumber"></label>

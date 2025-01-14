@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 const technicianDashboardData =
 [
   {
-    technicianAppName: "certified",
+    technicianAppName: "Mfon Mfon",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -14,7 +14,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Certified",
+    technicianAppName: "Mfon Mfon",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -24,7 +24,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Certifed",
+    technicianAppName: "Mfon Mfon",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -34,7 +34,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Certified",
+    technicianAppName: "Mfon Mfon",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -44,7 +44,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Certified",
+    technicianAppName: "Mfon Mfon",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -53,7 +53,7 @@ const technicianDashboardData =
     locationIcon:<FaLocationDot/>,
     tickingIcon: <FaCircleCheck/>
   },{
-    technicianAppName: "Certified",
+    technicianAppName: "Mfon Mfon",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",

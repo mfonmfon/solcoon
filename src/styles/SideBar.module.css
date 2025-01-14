@@ -3,8 +3,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 250px;
-  background-color: #f8f8f8; /* Light background color */
+  width: 129px;
+  background-color: #f9f9f9; /* Light background color */
   border-right: 1px solid #ddd;
   padding: 10px;
   height: 100vh; /* Full height */
