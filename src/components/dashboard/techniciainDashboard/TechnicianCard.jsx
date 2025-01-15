@@ -10,7 +10,7 @@ const TechnicianCard = () => {
   return (
     <div className={TechnicianCardStyle.container}>
      <div className={TechnicianCardStyle.teamHeader}>
-     <h1>Top technicians,</h1>
+     <h1 className={TechnicianCardStyle.topTechnicianText}>Top technicians,</h1>
      <div className={TechnicianCardStyle.viewAll} >
       <p onClick={()=>{
         window.location.pathname='/view all'

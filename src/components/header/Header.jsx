@@ -15,7 +15,7 @@ const Header = () => {
       <nav className={HeaderStyles.headerContainer}>
         {/* Logo */}
         <div className={HeaderStyles.headerLogo}>
-         <h1 style={{fontSize: '2rem'}} onClick={()=>{
+         <h1 style={{fontSize: '2rem', color:'black'}} onClick={()=>{
           window.location.pathname = '/'
          }}>Solcon</h1>
         </div>

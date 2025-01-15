@@ -1,0 +1,27 @@
+.createReviewContainer{
+  width: 100%;
+  max-width: 1000px;
+  align-items: center;
+  margin-top:79px;
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100px;
+}
+.createReviewHeader{
+
+  align-items: center;
+ 
+}
+.review{
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 100px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
