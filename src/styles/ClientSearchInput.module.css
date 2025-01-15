@@ -1,0 +1,38 @@
+.searchInputContainer{
+  height: 40vh;
+  width: 70%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgb(33, 80, 235);
+  background: linear-gradient(180deg, rgb(42, 90, 247) 0%, rgb(26, 25, 25) 100%);
+  border: 1px transparent;
+  border-radius: 9px;
+}
+.searchCardInput{
+  width: 450px;
+  margin-top: 20%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  align-items: center;
+
+}
+.searchCardHeader{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+}
+.searchCardHeader .searchCard{
+  border: 1px transparent;
+  border-radius: 20px;
+ 
+} 
+.searchCardIcon{
+  margin-left: 27%;
+  z-index: 10;
+  position: absolute;
+  margin-top: 7%;
+  color: white;
+}

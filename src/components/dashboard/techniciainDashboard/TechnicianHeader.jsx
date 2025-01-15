@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {technicianData} from '../../../components/header/AppData'
+import {technicianData, secondTechnicianData} from '../../../components/header/AppData'
 import { Link } from 'react-router-dom'
 import { BellIcon, HeartIcon, MessageCircle } from 'lucide-react'
 import { GiLoveHowl } from 'react-icons/gi'
@@ -31,7 +31,16 @@ const TechnicianHeader = () => {
             )})}
         </ul>
         <div className={TechnicianHeaderStyle.secondContentLink}>
-          <h1>Check</h1>
+          {secondTechnicianData.map((secondItems, index)=>{
+            return(
+              <div key={index}>
+                <li>
+                  
+                </li>
+
+              </div>
+            )
+          })}
         </div>
        </div>
       </div>
