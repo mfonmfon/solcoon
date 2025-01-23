@@ -12,6 +12,14 @@ import Order from "../components/order/Order"
 import TechnicianProfile from "../components/userProfile/technicianProfile/TechnicianProfile"
 import EditProfile from "../components/editProfile/EditProfile"
 import TechnicianAssessment from "../components/assessment/TechnicianAssessment"
+import FindTechnician from "../components/dashboard/findtechnician/FindTechnician"
+import Message from "../components/dashboard/message/Message"
+import ClientPostCreation from "../components/dashboard/clientpost/ClientPostCreation"
+import Earnings from "../components/dashboard/earnings/Earnings"
+import ClientDashboard from "../components/dashboard/clientDashboard/ClientDashboard"
+import FindWork from '../components/dashboard/clientDashboard/RecentPost'
+import Subscription from "../components/subscription/Subscription"
+import ClientSignup from "../auth/signup/client/ClientSignup"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -45,6 +53,10 @@ const SOLVAS_ROUTES = [
     element: <Signup/>
   },
   {
+    path: '/clientsignup',
+    element:<ClientSignup/>
+  },
+  {
     path: '/option',
     element: <UserOptions/>
   },
@@ -76,6 +88,36 @@ const SOLVAS_ROUTES = [
     path: '/technicianassessment',
     element:<TechnicianAssessment/>
   },
+  {
+    path: '/findtechnician',
+    element:<FindTechnician/>
+  },
+  {
+    path: '/message',
+    element:<Message/>
+  },
+  {
+    path: '/createpost',
+    element:<ClientPostCreation/>
+  },
+  {
+    path: '/earnings',
+    element:<Earnings/>
+  },
+  {
+    path: '/clientdashboard',
+    element:<ClientDashboard/>
+  },
+
+  {
+    path: '/findwork',
+    element:<FindWork/>
+  },
+  {
+    path: '/subscription',
+    element:<Subscription/>
+  }
+
 
 ]
 export default SOLVAS_ROUTES

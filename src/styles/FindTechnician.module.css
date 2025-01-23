@@ -1,0 +1,53 @@
+/* FindTechnician.module.css */
+
+.findTechnicianText {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mapContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.googleMappContainer {
+  flex: 1; /* Takes 50% of the width */
+  margin-right: 20px;
+}
+
+.searchFormContainer {
+  flex: 1; /* Takes 50% of the width */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.firstSearchInput,
+.secondSearchInput {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+  background-color: #333;
+}

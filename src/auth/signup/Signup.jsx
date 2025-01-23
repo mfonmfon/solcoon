@@ -30,7 +30,7 @@ const Signup = () => {
     subscriptionStatus: 'FREE',
     userType: 'TECHNICIAN',
     subscriptionType: 'MONTHLY',
-    firstName: ' ',
+    firstName: '',
     lastName: '',
     phoneNumber: '',
     email: '',
@@ -40,34 +40,33 @@ const Signup = () => {
     isLoggedIn: 'ONLINE',
   });
   console.log("Check here for the error",formData)
-  const handleFormData = (e) => { const { name, value } = e.target;
+  const handleFormData = (e) => {
+     const { name, value } = e.target;
    setFormData({ ...formData, [name]: value }
-
    )};
-   
+
   const handleSignupSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true) //Start loading the page
+    setIsLoading(true) 
     try {
       console.log(formData)
-      const response = await fetch('http://localhost:8082/register-technician', {
+      const response = await fetch('http://localhost:8081/register-technician', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData), // Correctly serialize formData
+        body: JSON.stringify(formData), 
       });
-
-      // Check if the request was successful
+     
       if (response.ok) {
-        const data = await response.json(); // Parse response JSON
-        localStorage.setItem('firstName', JSON.stringify(formData.firstName));
-        localStorage.setItem('id', JSON.stringify(formData.id));
+        const data = await response.json(); 
+        console.log(data)
+        localStorage.setItem('userDetails', JSON.stringify(formData));
         toast.success('Signup successful', {
-          onClose: () => navigate("/techniciandashboard"), // Navigate after toast closes
-          autoClose: 2000, // 3-second delay for the toast
+          onClose: () => navigate("/technicianassessment"), 
+          autoClose: 2000,
         });
-        
+
       } else {
         const data = await response.json(); // Parse error response JSON
         toast.error(data.error, 'Signup failed. Please try again.')
@@ -110,7 +109,7 @@ const Signup = () => {
                 {error}
               </p>
             )}
-            <p>Signup to find clients that need your service</p>
+            <p>Signup as a technician</p>
           </div>
 
           <form onSubmit={handleSignupSubmit} id={SignupStyle.formFilling}>

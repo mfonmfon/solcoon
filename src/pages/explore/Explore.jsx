@@ -5,6 +5,8 @@ import ExploreHeroSection from '../../components/heroSection/exploreHero/Explore
 import GetInspiredGrid from '../../components/getInspiredGrid/GetInspiredGrid'
 import AskQuestion from '../../components/askQuestions/AskQuestions'
 import ClientDashboard from '../../components/dashboard/clientDashboard/ClientDashboard'
+import ClientPostCreation from '../../components/dashboard/clientpost/ClientPostCreation'
+import FindTechnician from '../../components/dashboard/findtechnician/FindTechnician'
 const Explore = () => {
   return (
     <div>
@@ -12,8 +14,9 @@ const Explore = () => {
       {/* <ExploreHeroSection/> */}
       {/* <GetInspiredGrid/> */}
       {/* <AskQuestion /> */}
-      
-      <ClientDashboard/>
+      <ClientPostCreation/>
+      {/* <ClientDashboard/> */}
+      {/* <FindTechnician/> */}
     </div>
   )
 }

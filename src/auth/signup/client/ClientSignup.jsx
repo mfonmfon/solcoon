@@ -1,159 +1,149 @@
-// import React, {useState, useRef, useEffect} from 'react'
-// import ClientSignupStyle from '../../auth/signup/ClientSignup.module.css'
-// import SecondSolarImage from '../../images/heroImages/SecondSolarImage.jpg'
-
-// const generatedIDs = new Set(); 
-// function generateRandomID() {
-//   let id;
+import React, {useState, useRef, useEffect} from 'react'
+import ClientSignupStyle from '../../../auth/signup/Signup.module.css'
+import SecondSolarImage from '../../../images/heroImages/SecondSolarImage.jpg'
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const generatedIDs = new Set(); 
+function generateRandomID() {
+  let id;
   
-//   // Keep generating a random ID until it's unique
-//   do {
-//     id = Math.floor(Math.random() * 1000000);  // Generate a random number
-//   } while (generatedIDs.has(id));  // Check if the ID already exists in the Set
+  // Keep generating a random ID until it's unique
+  do {
+    id = Math.floor(Math.random() * 1000000);  // Generate a random number
+  } while (generatedIDs.has(id));  // Check if the ID already exists in the Set
   
-//   generatedIDs.add(id);  // Add the new unique ID to the Set
+  generatedIDs.add(id);  // Add the new unique ID to the Set
   
-//   return id;
-// }
+  return id;
+}
 
 
-// const ClientSignup = () => {
-
-//   const[id, setId] = useState("")
-//   const[firstName, setFirstName] = useState("");
-//   const[lastName, setLastName] = useState("");
-//   const[email, setEmail] = useState("");
-//   const[password, setPassword] = useState("");
-//   const[country, setCountry] = useState("");
-
-
-//   // const handleFirstName = (event) =>{
-//   //   setFirstName(event.target);
-//   // }
-//   // const handleLastName = (event)=>{
-//   //   setLastName(event.target.value)
-//   // }
-//   // const handleEmail = (event)=>{
-//   //   setEmail(event.target.value)
-//   // }
-//   // const handlePassword = (event)=>{
-//   //   setPassword(event.target.value)
-//   // }
-//   // const handleCountry =(event)=>{
-//   //  setCountry(event.target.value)
-//   // }
-//   // const handleFormSubmit = async (event)=>{
-//   //   event.preventDefault()
-
+const ClientSignup = () => {  
   
-//     const [formData, setFormData] = useState({
-//       id: generateRandomID(),
-//       firstName: '',
-//       lastName: '',
-//       phoneNumber: '',
-//       email: '',
-//       password: '',
-//       location: 'sabo, yaba',
-//       isLoggedIn: 'ONLINE',
-//     });
+  const navigateTo = useNavigate();
+  const[clientSignupFormData, setClientSignupFormData] = useState({
+    customerId:generateRandomID(),
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber:"09124565321",
+    location: "YABA, LAGOS",
+    nin: "0901254768",
+    password: "",
+    isLoggedIn: "ONLINE",
+  })
 
-//     const handleFormData = (e) => { const { name, value } = e.target;
-//     setFormData({ ...formData, [name]: value }
- 
-//     )};
-   
+  const handelClientSignupFormChange = (event)=>{
+    const {name, value} = event.target;
+    setClientSignupFormData({...clientSignupFormData, [name]: value});
+  }
 
-//     try{
-//       const responseData = await fetch('http://localhost:8081/register-customer',
-//         {
-//           method: "POST",
-//           headers:{
-//             'Content-Type': 'application/json',
-//           },
-//           body: JSON.stringify(
-//             formData
-//           ),
-//         });
-//         if(!responseData.ok)throw new Error(`ERROR:${responseData.statusText}`);
-//           localStorage.setItem('firstName', JSON.stringify(formData.firstName));
-//           localStorage.setItem('id', JSON.stringify(formData.id));
-//           console.log("Error here check am again");
-//           const result = await responseData.json();
-//           alert(`Success ${result.statusText}`)
-        
-//     }catch(error){
-//       console.error(`Error creating this user`)
-//   }
-// }
+  const handleClientSignupFormSubmit = async (event)=>{
+    event.preventDefault();
+    console.log(clientSignupFormData);
+
+    // if(!clientSignupFormData.firstName|| !clientSignupFormData.lastName|| 
+    //   !clientSignupFormData.location || !clientSignupFormData.phoneNumber|| !clientSignupFormData.email 
+    //   || !clientSignupFormData.password)toast.error("All input fields are required")
+
+    try{
+      const clientSignupFormResponseData = await fetch('http://localhost:8081/register-customer', {
+        method:'POST',
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify(clientSignupFormData)
+      });
+
+      if(clientSignupFormResponseData.ok){
+        const formResult = await clientSignupFormResponseData.json();
+        console.log(formResult);
+        console.log("Signup successful")
+        toast.success('Signup successful')
+        navigateTo('/clientdashboard')
+      }else{
+        console.log("Failed to signup");
+       toast('Failed to signup')
+      }
+    }catch(error){
+      console.log(error);
+      alert.error("Failed to signup client ")
+    }
+  }
   
-//   return (
-//       <div className={ClientSignupStyle.SignupContainer}>
-//       <div className={ClientSignupStyle.SignupRightSide}>
-//         <div className={ClientSignupStyle.SignupRightSideContent}>
-//           <img className={ClientSignupStyle.SignupImage} src={SecondSolarImage} alt="Background" />
-//         </div>
-//       </div>
+  return (
+      <div className={ClientSignupStyle.SignupContainer}>
+      <div className={ClientSignupStyle.SignupRightSide}>
+        <div className={ClientSignupStyle.SignupRightSideContent}>
+          <img className={ClientSignupStyle.SignupImage} src={SecondSolarImage} alt="Background" />
+        </div>
+      </div>
 
-//       <div className={ClientSignupStyle.SignupLeftSide}>
-//         <div className={ClientSignupStyle.SignupContent}>
+      <div className={ClientSignupStyle.SignupLeftSide}>
+        <div className={ClientSignupStyle.SignupContent}>
             
-//       <div className={ClientSignupStyle.SignupText}>
-//         <p  className={ClientSignupStyle.errorMessage ? "errorMessage": "offscreen"} aria-live='assertive'>
-//         </p>
-//       <p>{`Signup to find clients that needs your service`}</p>
-//       </div>
+      <div className={ClientSignupStyle.SignupText}>
+        <p  className={ClientSignupStyle.errorMessage ? "errorMessage": "offscreen"} aria-live='assertive'>
+        </p>
+      <p>{`Signup to find clients that needs your service`}</p>
+      </div>
 
-//   <form onChange={handleFormSubmit} id={ClientSignupStyle.formFilling} >
-//     <div className={ClientSignupStyle.SignupForms}>
-//       <label htmlFor='firstName' ></label>
-//     <input type="text"
-//        placeholder="First Name"
-//        name='firstNamae'
-//        onChange={handleFirstName}
-//        required
-//       />
-//     </div>
-//     <div className={ClientSignupStyle.SignupForms}>
-//       <label htmlFor='lastName' ></label>
-//       <input type="text"
-//       name='lastNamae'
-//       placeholder="Last Name" 
-//       onChange={handleLastName}
-//       required
-//         />
-//     </div>
-//     <div className={ClientSignupStyle.SignupForms}>
-//       <label htmlFor='email'></label>
-//       <input 
-//       type="email" 
-//       name='email' 
-//       placeholder="example@gmail.com"
-//       onChange={handleEmail}
-//       required
-//         />
-//     </div>
+  <form onSubmit={handleClientSignupFormSubmit} id={ClientSignupStyle.formFilling} >
+    <div className={ClientSignupStyle.SignupForms}>
+      <label htmlFor='firstName' ></label>
+    <input type="firstName"
+       placeholder="First Name"
+       name='firstNamae'
+       onChange={handelClientSignupFormChange}
+       required
+      />
+    </div>
 
-//     <div className={ClientSignupStyle.SignupForms}>
-//       <label htmlFor='password'></label>
-//       <input
-//       type="password" 
-//       name='password' 
-//       placeholder="Password"
-//       onChange={handlePassword}
-//       required
-//       />
+    <div className={ClientSignupStyle.SignupForms}>
+      <label htmlFor='lastName' ></label>
+      <input type="lastName"
+      name='lastNamae'
+      placeholder="Last Name" 
+      onChange={handelClientSignupFormChange}
+      required
+        />
+    </div>
+
+    <div className={ClientSignupStyle.SignupForms}>
+      <label htmlFor='email'></label>
+      <input 
+      type="email" 
+      name='email' 
+      placeholder="example@gmail.com"
+      onChange={handelClientSignupFormChange}
+      required
+        />
+    </div>
+
+    <div className={ClientSignupStyle.SignupForms}>
+      <label htmlFor='password'></label>
+      <input
+      type="password" 
+      name='password' 
+      placeholder="Password"
+      onChange={handelClientSignupFormChange}
+      required
+      />
     
-//     </div>
+    </div>
 
-//     <button  onChange={handleFormSubmit} className={ClientSignupStyle.Button} type="submit">
-//       <a href='/technicianDashboard'>Signup</a> 
-//     </button>
-//   </form>
-//       </div>
-//       </div>
+    <button  className={ClientSignupStyle.ClientButton} type="submit">
+    Signup 
+    </button>
+  </form>
+      </div>
+      </div>
+      <ToastContainer/>
 
-//   </div>
-//   )
-// }
+  </div>
+  )
+}
 
-// export default Signup
+
+export default ClientSignup

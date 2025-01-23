@@ -164,7 +164,7 @@ export const technicianData = [
   },
   {
     id: 0,
-    path:"/order",
+    path:"/findwork",
     order:"Find work",
   },
 

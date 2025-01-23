@@ -3,16 +3,19 @@ import TechnicianAssessmentStyle from '../../styles/TechnicianAssessment.module.
 import TechnicianAssessmentImage from '../../images/assessmentImage/CustomerCare.jpg'
 import { useNavigate } from 'react-router-dom';
 const TechnicianAssessment = () => {
-  const[firstName, setFirstName] = useState();
   const[assessmentFormData, setAssessmentFormData] = useState({
 
   }) 
   const navigateToTheTechnicianDashboard = useNavigate()
-    // JSON.parse(localStorage.getItem("firstName"))
-    useEffect(()=>{
+  const[firstName, setFirstName] = useState();
+ 
+   
+   useEffect(()=>{
       const storedFirstName = localStorage.getItem(`firstName`)
+      // const parsedStoredFirstName = JSON.parse(storedFirstName)
+      // console.log(parsedStoredFirstName)
       if(storedFirstName){
-        setFirstName(storedFirstName)
+       setFirstName(JSON.parse(storedFirstName))
       }
   
     },[])
@@ -21,7 +24,6 @@ const TechnicianAssessment = () => {
 
     const handleAssessmentFormSubmit = async (event)=>{
       event.preventDefault();
-
       try{
         const assessmentResponseData = await fetch('',{
           method: 'POST',
@@ -32,6 +34,8 @@ const TechnicianAssessment = () => {
         });
         if(assessmentResponseData.ok){
           const assessmentResponseJson = await assessmentResponseData.json();
+          
+          
           console.log(assessmentResponseJson)
           navigateToTheTechnicianDashboard('/technicianDashboard');
         }
@@ -58,8 +62,7 @@ const TechnicianAssessment = () => {
           <input 
           type='file'
           name='certificationFile'
-          value={''}
-          onChange={''}
+          // onChange={''}
           accept='jpeg, png, pdf'
           className={TechnicianAssessmentStyle.assesementInput}
           required
@@ -70,9 +73,7 @@ const TechnicianAssessment = () => {
         What types of solar systems are you certified to install or maintain and repair?
           <select
           name='certificationType'
-          // multiple
-          value={''}
-          onChange={''}
+          // onChange={}
           required
           >
             <option>Choose the types of solar systems below</option>
@@ -89,7 +90,6 @@ const TechnicianAssessment = () => {
         <input
         type='text'
         name='safetyTraining'
-        value={''}
         // onChange={''}
         placeholder='Yes or no'
         className={TechnicianAssessmentStyle.assesementInput}
@@ -102,8 +102,8 @@ const TechnicianAssessment = () => {
 
        <select 
        name='yearsOfExperience'
-       value={''}
-       onChange={''}
+      //  value={''}
+      //  onChange={''}
        required
        >
         <option>Choose the number of years</option>
@@ -120,8 +120,8 @@ const TechnicianAssessment = () => {
           <input 
           type='file'
           name='profilePicture'
-          value={''}
-          onChange={''}
+          // value={''}
+          // onChange={''}
           accept='jpeg, png, pdf'
           required
           />
@@ -129,18 +129,23 @@ const TechnicianAssessment = () => {
 
 
         <textarea 
-        style={{width: '100%', height: '100px', padding: '10px', border: '1px solid #ccc', borderRadius: '5px', resize: 'none'}}
+        style={{width: '100%', height: '100px', 
+          padding: '10px', 
+          border: '1px solid #ccc',
+           borderRadius: '5px',
+            resize: 'none'
+          }}
         name='bio'
-        value={''}
-        onChange={''}
+        // value={''}
+        // onChange={''}
         placeholder='Write a short bio about yourself.'
         >
         </textarea> 
-
-
         
             </form>
-            <button className={TechnicianAssessmentStyle.assessmentSubmitButton} onClick={handleAssessmentFormSubmit}>Submit</button>
+            <button className={TechnicianAssessmentStyle.assessmentSubmitButton} onClick={()=>{
+              window.location.pathname= '/techniciandashboard'
+            }} >Submit</button>
           </div>
         </div>
 

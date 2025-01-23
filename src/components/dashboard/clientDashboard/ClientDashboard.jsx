@@ -30,6 +30,10 @@ const ClientDashboard = ()=>{
           )}
           )}
         </ul>
+
+        <div>
+          <li>Check here</li>
+        </div>
        </div> 
        {/* Client search input here */}
        <ClientSearchInput/>

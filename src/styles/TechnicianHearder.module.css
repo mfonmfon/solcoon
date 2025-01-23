@@ -1,12 +1,47 @@
 .headerContainer{
- max-width: 300px;
+ width: 100%;
 }
 .headerContent{
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.navHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.navHeader ul li{
+  display: inline-block;
+  list-style: none;
+  padding: 10px 20px; 
+}
+.navHeader ul li a{
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+.secondContentLink {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.secondLisItems{
+  list-style: none;
+  color: white;
+  font-size: 15px;
+}
+.logo{
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.profilePicture{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+.secondLisItems a{
+  text-decoration: none;
+  color: white;
 }

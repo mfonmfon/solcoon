@@ -7,7 +7,7 @@ const RecentPost = () => {
   return (
     <div className={RecentPostStyle.container}>
       <div className={RecentPostStyle.recentPostContent}>
-        <h1 className={RecentPostStyle.topPostText}>Recent Posts From Clients</h1>
+        <h1 className={RecentPostStyle.topPostText}>Recommended jobs </h1>
         {clientPost.map((recentPostData, index)=>{
           return(
             <div key={index} className={RecentPostStyle.recentPostCard}>

@@ -1,5 +1,9 @@
 import { FaCircleCheck, FaLocationDot } from 'react-icons/fa6'
 import PictureTwo from '../../../images/dashboardimages/PictureTwo.jpg'
+import PictureOne from '../../../images/dashboardimages/PictureOne.jpg'
+import PictureThree from '../../../images/dashboardimages/PictureThree.jpg'
+import PosImage from '../../../images/dashboardimages/PosImageOne.jpg'
+
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 const technicianDashboardData =
 [
@@ -14,8 +18,8 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
-    technicianImageUrl:PictureTwo ,
+    technicianAppName: "Obinna Emeka",
+    technicianImageUrl:PictureOne,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
     technicianEmail: "mfonm579@gmail.com",
@@ -24,8 +28,8 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
-    technicianImageUrl:PictureTwo ,
+    technicianAppName: "Chinnedu",
+    technicianImageUrl:PosImage,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
     technicianEmail: "mfonm579@gmail.com",
@@ -34,8 +38,8 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
-    technicianImageUrl:PictureTwo ,
+    technicianAppName: "Kim Timi",
+    technicianImageUrl:PictureThree ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
     technicianEmail: "mfonm579@gmail.com",
@@ -44,7 +48,7 @@ const technicianDashboardData =
     tickingIcon: <FaCircleCheck/>
   },
   {
-    technicianAppName: "Mfon Mfon",
+    technicianAppName: "Oreoluwa",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
@@ -53,7 +57,7 @@ const technicianDashboardData =
     locationIcon:<FaLocationDot/>,
     tickingIcon: <FaCircleCheck/>
   },{
-    technicianAppName: "Mfon Mfon",
+    technicianAppName: "Paul Smith",
     technicianImageUrl:PictureTwo ,
     description: "I will repair your solar system",
     techncianLocation: "Herbert Marcaulay way, Yaba Lagos",
