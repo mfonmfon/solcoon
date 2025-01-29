@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import { useLocation } from 'react-router-dom';
 import { SideBarData, sliderData } from '../../header/AppData';
 import TechnicianHeader from './TechnicianHeader';
-import ClientHeader from '../clientDashboard/ClientHeader';
 const TechnicianHeroection = () => {
   const[search, setSearch] = useState('')
   const[filteredJobs, setFilteredJobs] = useState([]);
@@ -70,7 +69,7 @@ const TechnicianHeroection = () => {
   
   return (
     <div className={TechnicianHeroectionStyle.technicianHerosectioncontainer}>
-      <ClientHeader/>
+      <TechnicianHeader/>
        <div className={TechnicianHeroectionStyle.searchInputContainer}>
        <div className={TechnicianHeroectionStyle.welcomeMessage}>
         {/* Render the welcome message */}

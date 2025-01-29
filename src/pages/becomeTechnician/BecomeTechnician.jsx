@@ -5,8 +5,6 @@ const BecomeTechnician = () => {
   return (
     <div>
       <TechnicianAssessment/>
-      
-      
     </div>
   )
 }

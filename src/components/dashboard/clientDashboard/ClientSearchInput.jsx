@@ -5,6 +5,7 @@ const ClientSearchInput = () => {
   
   return (
     <div className={ClientSearchInputStyles.searchInputContainer}>
+      <ClientSearchInput/>
        <div className={ClientSearchInputStyles.searchCardHeader}>
         <div className={ClientSearchInputStyles.searchCard}>
           <input

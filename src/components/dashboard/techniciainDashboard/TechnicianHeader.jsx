@@ -33,7 +33,7 @@ const TechnicianHeader = () => {
         </ul>
         <div className={TechnicianHeaderStyle.secondContentLink}>
          <li className={TechnicianHeaderStyle.secondLisItems}><Link to={"/subscription"}>Subscribe</Link></li>
-         <li className={TechnicianHeaderStyle.secondLisItems}>Check here</li>
+         <li className={TechnicianHeaderStyle.secondLisItems}>Logout</li>
           <img className={TechnicianHeaderStyle.profilePicture} src={ProfilePicture} alt='' onClick={()=>{
             window.location.pathname="/technicianprofile"
           }}></img>

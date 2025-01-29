@@ -7,7 +7,7 @@ import {useNavigate } from "react-router-dom";
 const Login = () => { 
   const storedId = localStorage.getItem("id")
   const [loginFormData, setLoginFormData] = useState({
-    technicianId: storedId,
+    technicianId: 0,
     email: '',
     password: '',
   });
@@ -25,7 +25,7 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:8081/login-technician", {
+      const response = await fetch("http://localhost:8080/login-technician", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -34,13 +34,13 @@ const Login = () => {
       });
 
       if (response.ok) {
-        const data = await response.json(); // Ensure this matches your backend's response structure
-        console.log("Login Response Data:", data); // Debugging
+        const data = await response.json(); 
+        console.log("Login Response Data:", data); 
 
         // Save the user ID to localStorage
         localStorage.setItem("userId", JSON.stringify(data.id));
        toast.success('Logged In successfully', {
-                onClose: () => navigate("/technicianDashboard"), // Navigate after toast closes
+                onClose: () => navigate("/technicianDashboard"), 
                 autoClose: 2000, // 3-second delay for the toast
               });
       

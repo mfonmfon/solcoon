@@ -4,9 +4,7 @@ const TechnicianSubscription = () => {
   return (
     <div>
       <div>
-        <form>
-          <input type='' className='' />
-        </form>
+        
       </div>
       
     </div>

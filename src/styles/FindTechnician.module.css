@@ -1,53 +1,79 @@
 /* FindTechnician.module.css */
 
-.findTechnicianText {
-  font-size: 2rem;
-  font-weight: bold;
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; /* Full viewport height */
+  font-family: Arial, sans-serif;
+  background-color: #020530;
+}
+
+/* Left-side input container */
+.inputContainer {
+  width: 30%; /* Takes up 30% of the screen width */
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Slight shadow for separation */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center input vertically */
+}
+
+.inputContainer h1 {
+  font-size: 1.5rem;
   margin-bottom: 20px;
+  color: #333;
   text-align: center;
 }
 
-.mapContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.googleMappContainer {
-  flex: 1; /* Takes 50% of the width */
-  margin-right: 20px;
-}
-
-.searchFormContainer {
-  flex: 1; /* Takes 50% of the width */
+.inputContainer form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 15px; /* Spacing between elements */
 }
 
-.firstSearchInput,
-.secondSearchInput {
-  width: 100%;
-  max-width: 400px;
-  padding: 15px;
-  margin-bottom: 10px;
+.inputContainer input {
+  padding: 10px;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem;
 }
 
-.searchButton {
-  padding: 10px 20px;
-  background-color: #000;
+.inputContainer button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff; /* Blue button */
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-.searchButton:hover {
-  background-color: #333;
+.inputContainer button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Right-side map container */
+.mapContainer {
+  width: 70%; /* Takes up 70% of the screen width */
+  position: relative;
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack the input and map vertically */
+  }
+
+  .inputContainer {
+    width: 100%; /* Full width for input container */
+    height: 30%; /* Takes up 30% of the viewport height */
+    box-shadow: none; /* Remove shadow for a cleaner mobile look */
+  }
+
+  .mapContainer {
+    width: 100%; /* Full width for map container */
+    height: 70%; /* Takes up 70% of the viewport height */
+  }
 }

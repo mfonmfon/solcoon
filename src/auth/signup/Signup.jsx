@@ -4,6 +4,8 @@ import SecondSolarImage from '../../images/signup/SignupImage.jpg';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserIcon } from 'lucide-react';
+import { MdEmail } from 'react-icons/md';
 
 
 const generatedIDs = new Set(); 
@@ -36,7 +38,7 @@ const Signup = () => {
     email: '',
     password: '',
     location: '',
-    nin: '0982654376',
+    nin: '0982654371',
     isLoggedIn: 'ONLINE',
   });
   console.log("Check here for the error",formData)
@@ -50,7 +52,7 @@ const Signup = () => {
     setIsLoading(true) 
     try {
       console.log(formData)
-      const response = await fetch('http://localhost:8081/register-technician', {
+      const response = await fetch('http://localhost:8080/register-customer', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,12 +119,14 @@ const Signup = () => {
               {/* <label htmlFor="firstName">First Name</label> */}
               <input
                 type="text"
-                placeholder="Firstname"
+                placeholder={'First name'}
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleFormData}
+                className={SignupStyle.inputName}
                 required
               />
+            {/* <UserIcon /> */}
             </div>
 
             <div className={SignupStyle.SignupForms}>
@@ -135,6 +139,7 @@ const Signup = () => {
                 onChange={handleFormData}
                 required
               />
+              {/* <UserIcon /> */}
             </div>
 
             <div className={SignupStyle.SignupForms}>
@@ -147,6 +152,7 @@ const Signup = () => {
                 onChange={handleFormData}
                 required
               />
+        
             </div>
 
             

@@ -68,6 +68,7 @@ const SOLVAS_ROUTES = [
     path: '/congratulations',
     element:<CongratulationMessage/>
   },
+
   {
     path: '/technicianDashboard',
     element:<TechnicianDashboard/>

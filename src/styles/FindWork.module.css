@@ -1,15 +1,15 @@
-.find-work-container {
+.findworkcontainer {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #1548f1;
 }
 
-.jobs-list {
+.jobslist {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.job-card {
+.jobcard {
   background-color: #ffffff;
   padding: 20px;
   border: 1px solid #ddd;
@@ -18,11 +18,11 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.job-card h2 {
+.jobcard h2 {
   font-size: 18px;
   color: #333;
 }
 
-.job-card p {
+.jobcard p {
   color: #666;
 }

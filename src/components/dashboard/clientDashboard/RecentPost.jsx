@@ -2,6 +2,7 @@ import React from 'react'
 import RecentPostStyle from '../../../styles/RecentPost.module.css'
 import clientPost from '../../../components/dashboard/clientpost/clientPosts.json'
 import { ThumbsDownIcon, ThumbsUpIcon, VerifiedIcon } from 'lucide-react'
+import TechnicianHeroection from '../techniciainDashboard/TechnicianHeroection'
 
 const RecentPost = () => {
   return (

@@ -1,38 +1,42 @@
-.searchInputContainer{
-  height: 40vh;
-  width: 70%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  background-color: rgb(33, 80, 235);
-  background: linear-gradient(180deg, rgb(42, 90, 247) 0%, rgb(26, 25, 25) 100%);
-  border: 1px transparent;
-  border-radius: 9px;
-}
-.searchCardInput{
-  width: 450px;
-  margin-top: 20%;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  align-items: center;
+.technicianHerosectioncontainer{
+  overflow: hidden;
+  width: 100%;
+  height: 45vh;
+  background:linear-gradient(rgb(28, 28, 28), rgb(3, 101, 248));
 
 }
-.searchCardHeader{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10%;
+.image{
+  width: 100%; 
 }
-.searchCardHeader .searchCard{
-  border: 1px transparent;
-  border-radius: 20px;
- 
-} 
-.searchCardIcon{
-  margin-left: 27%;
-  z-index: 10;
-  position: absolute;
-  margin-top: 7%;
+.text{
   color: white;
+}
+.searchInputContainer{
+  align-items: center;
+  margin-left:9.4%;
+  margin-top: 3%;
+}
+.technicianInput{
+  width: 86%;
+  border-radius: 40px;
+}
+.sectionBtn{
+  border-radius: 10px;
+  border: 1px transparent;
+  background-color: rgb(51, 115, 244);
+  /* margin-bottom: 18%; */
+  /* z-index: 10; */
+  /* margin-left: 75%; */
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+  padding: 15px 24px;
+}
+.content{
+  position: relative;
 }

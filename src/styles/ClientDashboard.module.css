@@ -1,10 +1,69 @@
 .dashboardContainer{
   width:100%;
- 
+  display: flex;
+}
+.middleSide{
+  margin-left: 250px;
+  overflow-y: auto;
+  flex: 3;
+}
+.leftSide{
+  flex: 1;
+  position: fixed;
+}
+.rightSide{
+  flex: 1;
+}
+.dasboardCardHeader{
+  width: 89%;
+  align-items: center;
+  margin-top: 150px;  
+}
+.headCard{
+  background-color: #1351ef;
+  background: linear-gradient(90deg, #1351ef 0%, #1338f1dd 100%);
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+  height: 170px;
+}
+.dashboardSubLinks{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0;
+}
+.subLink{
+  display: flex; 
+  gap: 10px;
+
+}
+ .subLink li {
+  list-style: none;
+}
+.subLink li a{
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+}
+.secondSubLink{
+  display: flex;
+  gap: 10px;
+}
+.secondSubLink li {
+  list-style: none;
+}
+.secondSubLink li a{
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
 }
 .sideBarHeaderContent{
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
   margin-left: 4%;
@@ -28,4 +87,13 @@
   display: flex;
   z-index: 1;
 }
+.secondLinkItems{
+  display: flex;
+  gap: 10px;
+}
 
+.secondLinkListItems{
+  text-decoration: none;
+  list-style: none;
+  font-size: 14px;
+}

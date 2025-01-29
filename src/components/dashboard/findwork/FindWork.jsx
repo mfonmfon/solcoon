@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import TechnicianHeader from '../techniciainDashboard/TechnicianHeader'
-import RecentPost from '../../../components/dashboard/clientDashboardClientDashboards/RecentPost'
+import RecentPost from '../../../components/dashboard/clientDashboard/RecentPost'
 import TechnicianHeroection from '../techniciainDashboard/TechnicianHeroection'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -10,9 +10,9 @@ const FindWork = () => {
 
   // Fetch jobs when the component mounts
   useEffect(() => {
-    const fetchClientPost = async () => {
+    const fetchAllClientPost = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/technicians/jobs");
+        const response = await fetch("http://localhost:8081/api/post/getAllPost");
         if (response.ok) {
           const data = await response.json();
           setJobs(data);
@@ -25,11 +25,11 @@ const FindWork = () => {
         console.error("Error:", error);
       }
     };
-    fetchClientPost();
+    fetchAllClientPost();
   }, []);
   return (
     <div className={FindWorkStyles.findworkcontainer}>
-      <h1>Find Work</h1>
+      <h1>Latest Jobs Posts</h1>
       <div className={FindWorkStyles.jobslist}>
         {jobs.map((job) => (
           <div key={job.id} className={FindWorkStyles.jobcard}>

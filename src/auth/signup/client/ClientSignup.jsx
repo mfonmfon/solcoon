@@ -27,25 +27,19 @@ const ClientSignup = () => {
     firstName: "",
     lastName: "",
     email: "",
-    phoneNumber:"09124565321",
+    phoneNumber:"09124565325",
     location: "YABA, LAGOS",
-    nin: "0901254768",
+    nin: "0901254767",
     password: "",
     isLoggedIn: "ONLINE",
   })
-
   const handelClientSignupFormChange = (event)=>{
     const {name, value} = event.target;
     setClientSignupFormData({...clientSignupFormData, [name]: value});
   }
-
   const handleClientSignupFormSubmit = async (event)=>{
     event.preventDefault();
     console.log(clientSignupFormData);
-
-    // if(!clientSignupFormData.firstName|| !clientSignupFormData.lastName|| 
-    //   !clientSignupFormData.location || !clientSignupFormData.phoneNumber|| !clientSignupFormData.email 
-    //   || !clientSignupFormData.password)toast.error("All input fields are required")
 
     try{
       const clientSignupFormResponseData = await fetch('http://localhost:8081/register-customer', {
@@ -59,16 +53,15 @@ const ClientSignup = () => {
       if(clientSignupFormResponseData.ok){
         const formResult = await clientSignupFormResponseData.json();
         console.log(formResult);
-        console.log("Signup successful")
-        toast.success('Signup successful')
-        navigateTo('/clientdashboard')
+        console.log("Signup successful");
+        toast.success('Signup successful');
+        navigateTo('/clientdashboard');
       }else{
         console.log("Failed to signup");
-       toast('Failed to signup')
+       toast.error('Failed to signup');
       }
     }catch(error){
-      console.log(error);
-      alert.error("Failed to signup client ")
+      console.error(error);
     }
   }
   

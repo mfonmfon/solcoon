@@ -1,53 +1,80 @@
-.container {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+.earningContainer{
+  width: 77%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
 }
-
-.title {
-  color: #333;
+.billingText .billingTitle{
+  color: black;
 }
-
-.message {
-  color: #666;
-  margin: 10px 0;
+.billingText .billingDesc{
+  letter-spacing: 1px;
+  line-height: 20px;
+  color: grey;
+  margin-top: 15px;
 }
-
-.contactbutton {
-  background-color: #0073e6;
+.billingItems{
+  display: flex;
+  gap: 30px;
+  margin-top: 58px;
+  margin-bottom: 58px;
+  border: 1px transparent;
+  box-shadow: 0 1px 0px 0px rgba(0,0,0,0.2);
+}
+.billingItemList{
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+}
+.billingItems .billingHeader .billingItemList  a{
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  
+}
+.inputHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dateInput{
+  width: 180px;
+  padding: 4px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+.downloadCsvButton{
+  padding: 15px 27px;
+  border: none;
+  background-color: rgb(24, 79, 228);
   color: white;
+  border-radius: 5px;
+}
+.earningTable{
+  width: 100%;
+  margin-top: 50px;
+  border-collapse: collapse;
+  border: 1px solid grey;
+  box-shadow: 0 1px 0px 0px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  background-color: rgb(236, 238, 243);
+  /* background: linear-gradient(to bottom, rgb(236, 238, 243), rgb(23, 92, 232)); */
+  color: black;
+  text-align: center;
+  padding: 150px 20px;
+}
+
+.earningTableText{
+  font-size: 16px;
+}
+.contactButton{
+  padding: 19px 27px;
   border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.contactbutton:hover {
-  background-color: #005bb5;
-}
-
-.downloadsection {
-  margin: 20px 0;
-}
-
-.downloadbutton {
-  background-color: #ccc;
-  color: #666;
-  border: none;
-  padding: 10px 20px;
-  cursor: not-allowed;
-}
-
-.tabs ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.tabs li {
-  display: inline;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.tabs .selected {
-  font-weight: bold;
-  text-decoration: underline;
+  background-color: rgb(24, 79, 228);
+  color: white;
+  border-radius: 5px;
+  margin-top: 50px;
 }

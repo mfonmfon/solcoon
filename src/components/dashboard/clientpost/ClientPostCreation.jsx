@@ -26,8 +26,7 @@ const ClientPostCreation = () => {
     console.log(postFormData);
 
     try {
-      const postCreationResponseData = await fetch(
-        "http://localhost:8081/createPost",
+      const postCreationResponseData = await fetch("http://localhost:8081/create-post",
         {
           method: "POST",
           headers: {

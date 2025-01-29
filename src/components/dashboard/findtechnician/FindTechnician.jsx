@@ -1,133 +1,110 @@
-import React, { useState, useEffect, useRef } from "react";
-import { LoadScript, GoogleMap, DirectionsRenderer } from "@react-google-maps/api";
-import { geocodeByAddress, getLatLng } from "react-places-autocomplete";
-import FindTechnicianStyle from "../../../styles/FindTechnician.module.css";
+import React, { useState, useEffect } from "react";
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+import styles from "../../../styles/FindTechnician.module.css";
 
-const mapContainerStyle = {
-  width: "80%",
-  height: "600px",
-};
-
-const defaultCenter = {
-  lat: 6.5244, // Lagos latitude
-  lng: 3.3792, // Lagos longitude
-};
+// Fix for Leaflet marker icons
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+});
 
 const FindTechnician = () => {
   const [clientLocation, setClientLocation] = useState(""); // Client's input address
-  const [technicianLocation, setTechnicianLocation] = useState({ lat: 40.73061, lng: -73.935242 }); // Mocked technician location
-  const [mapCenter, setMapCenter] = useState(defaultCenter); // Map's initial center
-  const [directions, setDirections] = useState(null);
-  const mapRef = useRef(null); // Reference for the map instance
-  const technicianMarkerRef = useRef(null); // Reference for the technician marker
-  const clientMarkerRef = useRef(null); // Reference for the client marker
+  const [technicianLocation, setTechnicianLocation] = useState({ lat: 6.5244, lng: 3.3792 }); // Initial technician location
+  const [map, setMap] = useState(null); // Reference to the Leaflet map instance
+  const [routingControl, setRoutingControl] = useState(null); // Routing control instance
 
-  const mapApiKey = "YOUR_GOOGLE_MAPS_API_KEY";
+  // Initialize the map on component mount
+  useEffect(() => {
+    const mapInstance = L.map("map").setView([6.5244, 3.3792], 13); // Lagos coordinates
+    setMap(mapInstance);
 
-  // Fetch directions from Google Directions API
-  const fetchDirections = async (clientLoc, technicianLoc) => {
-    const directionsService = new window.google.maps.DirectionsService();
-    directionsService.route(
-      
-      {
-        origin: clientLoc,
-        destination: technicianLoc,
-        travelMode: window.google.maps.TravelMode.DRIVING,
-      },
-      (result, status) => {
-        if (status === window.google.maps.DirectionsStatus.OK) {
-          setDirections(result);
-        } else {
-          console.error(`Error fetching directions: ${status}`);
-        }
-      }
-    );
-  };
+    // Add OpenStreetMap tiles
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '© OpenStreetMap contributors',
+    }).addTo(mapInstance);
 
-  // Handle client location geocoding
+    // Add technician marker
+    const technicianMarker = L.marker([technicianLocation.lat, technicianLocation.lng]).addTo(mapInstance);
+
+    // Simulate real-time technician movement
+    const interval = setInterval(() => {
+      setTechnicianLocation((prevLocation) => {
+        const updatedLocation = {
+          lat: prevLocation.lat + 0.0001,
+          lng: prevLocation.lng + 0.0001,
+        };
+        technicianMarker.setLatLng([updatedLocation.lat, updatedLocation.lng]); // Update marker position
+        mapInstance.panTo([updatedLocation.lat, updatedLocation.lng]); // Center the map
+        return updatedLocation;
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(interval); // Clear interval on component unmount
+      mapInstance.remove(); // Clean up the map instance
+    };
+  }, []);
+
+  // Handle form submission to geocode client address
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    if (!clientLocation) return;
+    if (!clientLocation || !map) return;
 
+    // Geocode client address (use a free geocoding service like Nominatim)
+    const geocodeUrl = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
+      clientLocation
+    )}&format=json&limit=1`;
     try {
-      const results = await geocodeByAddress(clientLocation);
-      const { lat, lng } = await getLatLng(results[0]);
-      const clientLatLng = { lat, lng };
+      const response = await fetch(geocodeUrl);
+      const data = await response.json();
+      if (data.length > 0) {
+        const clientLatLng = { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
 
-      setMapCenter(clientLatLng);
+        // Add client marker to the map
+        const clientMarker = L.marker([clientLatLng.lat, clientLatLng.lng], { title: "You" }).addTo(map);
+        map.setView([clientLatLng.lat, clientLatLng.lng], 13); // Center the map on the client location
 
-      // Update the client marker on the map
-      if (mapRef.current) {
-        if (!clientMarkerRef.current) {
-          clientMarkerRef.current = new window.google.maps.marker.AdvancedMarkerElement({
-            map: mapRef.current,
-            position: clientLatLng,
-            title: "You",
-          });
-        } else {
-          clientMarkerRef.current.position = clientLatLng;
+        // Add routing from client to technician
+        if (routingControl) {
+          map.removeControl(routingControl); // Remove previous routing control
         }
-      }
 
-      // Fetch directions between client and technician
-      fetchDirections(clientLatLng, technicianLocation);
+        const newRoutingControl = L.Routing.control({
+          waypoints: [L.latLng(clientLatLng.lat, clientLatLng.lng), L.latLng(technicianLocation.lat, technicianLocation.lng)],
+          routeWhileDragging: true,
+        }).addTo(map);
+        setRoutingControl(newRoutingControl);
+      } else {
+        alert("Location not found. Please try again.");
+      }
     } catch (error) {
-      console.error("Error processing client location:", error);
+      console.error("Error fetching geocode data:", error);
     }
   };
 
-  // Update technician's position dynamically
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const updatedTechnicianLocation = {
-        lat: technicianLocation.lat + 0.0001,
-        lng: technicianLocation.lng + 0.0001,
-      };
-      setTechnicianLocation(updatedTechnicianLocation);
-
-      // Update technician marker
-      if (mapRef.current) {
-        if (!technicianMarkerRef.current) {
-          technicianMarkerRef.current = new window.google.maps.marker.AdvancedMarkerElement({
-            map: mapRef.current,
-            position: updatedTechnicianLocation,
-            title: "Technician",
-          });
-        } else {
-          technicianMarkerRef.current.position = updatedTechnicianLocation;
-        }
-      }
-    }, 3000);
-
-    return () => clearInterval(interval); // Clean up interval on component unmount
-  }, [technicianLocation]);
-
   return (
-    <div className={FindTechnicianStyle.container}>
-      <h1>Track Your Technician</h1>
-      <form onSubmit={handleFormSubmit}>
-        <input
-          type="text"
-          placeholder="Enter your location"
-          value={clientLocation}
-          onChange={(e) => setClientLocation(e.target.value)}
-          required
-        />
-        <button type="submit">Find Technician</button>
-      </form>
-      <div style={{ height: "500px", width: "100%" }}>
-        <LoadScript googleMapsApiKey={mapApiKey}>
-          <GoogleMap
-            center={mapCenter}
-            zoom={14}
-            mapContainerStyle={mapContainerStyle}
-            onLoad={(map) => (mapRef.current = map)}
-          >
-            {/* Directions Renderer */}
-            {directions && <DirectionsRenderer directions={directions} />}
-          </GoogleMap>
-        </LoadScript>
+    <div className={styles.container}>
+      {/* Input Section */}
+      <div className={styles.inputContainer}>
+        <h1>Track Your Technician</h1>
+        <form onSubmit={handleFormSubmit}>
+          <input
+            type="text"
+            placeholder="Enter your location"
+            value={clientLocation}
+            onChange={(e) => setClientLocation(e.target.value)}
+            required
+          />
+          <button type="submit">Find Technician</button>
+        </form>
       </div>
+
+      {/* Map Section */}
+      <div id="map" className={styles.mapContainer} style={{ height: "600px", width: "100%" }}></div>
     </div>
   );
 };

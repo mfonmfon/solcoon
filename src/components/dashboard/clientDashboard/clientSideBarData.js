@@ -1,25 +1,53 @@
-import { PlusIcon, Text, UserIcon } from "lucide-react"
+import { MessageCircleIcon, PlusIcon, SettingsIcon, Text, UserIcon } from "lucide-react"
+import { IoNotificationsCircle } from "react-icons/io5"
 import { MdRateReview } from "react-icons/md"
 
 const clientSideBar = [
   {
     id:0, 
-    text:"find technician",
+    text:"Home",
     icons:<PlusIcon/>,
-    path:"/createpost",
+    path:"/clientdashboard",
   },
   {
     id:1, 
-    text:"create review",
+    text:"Find Technician",
     icons:<MdRateReview/>,
-    path:"/createreview",
+    path:"/findTechnician",
   },
   {
     id:2, 
-    text:"profile",
-    icons:<UserIcon/>,
-    path:"/profile",
+    text:"Message",
+    icons:<MessageCircleIcon/>,
+    path:"/message",
   },
+
+  {
+    id:3, 
+    text:"Notifications",
+    icons:<IoNotificationsCircle/>,
+    path:"/notifications",
+  }
+  ,
+  {
+    id:3, 
+    text:"Settings",
+    icons:<SettingsIcon/>,
+    path:"/settings",
+  },
+  {
+    id:3, 
+    text:"Settings",
+    icons:<SettingsIcon/>,
+    path:"/settings",
+  },
+  {
+    id:3, 
+    text:"Settings",
+    icons:<SettingsIcon/>,
+    path:"/settings",
+  }
+
   
 ]
 export default clientSideBar

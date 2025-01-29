@@ -5,50 +5,70 @@ import SideBar from '../../../components/sideBar/SideBar'
 import clientSideBar from '../../../components/dashboard/clientDashboard/clientSideBarData'
 import RecentPost from '../../../components/dashboard/clientDashboard/RecentPost'
 import RecentReviews from './RecentReviews'
-import clientNavBarData from './ClientHeaderData'
+import clientNavBarData, { clientSecondSubDashboardData, clientSubDashboardData } from './ClientHeaderData'
 import secondClientNavBarData from './ClientHeaderData'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { BiNotification } from "react-icons/bi";
 import { AppWindowIcon, BellIcon } from 'lucide-react'
 import ClientSearchInput from '../../../components/dashboard/clientDashboard/ClientSearchInput'
-
+import ClientSideBar from '../../../components/dashboard/clientDashboard/ClientSideBar'
+import Footer from '../../footer/Footer'
+import ClientHeader from './ClientHeader'
 const ClientDashboard = ()=>{
   return(
+    <>
+    <ClientHeader/>
     <div className={ClientDashboardStyles.dashboardContainer}>
-    <div className={ClientDashboardStyles.secondSideDashboard}>
-      <div className={ClientDashboardStyles.leftSideContent}>
-       <div className={ClientDashboardStyles.sideBarHeaderContent}>
-       <div className={ClientDashboardStyles.dashboardLogo}>
-        <h2 className={ClientDashboardStyles.dashboardLogoText}>Solcon</h2>
-       </div>
-       <ul className={ClientDashboardStyles.leftSideContentItems}>
-         {clientNavBarData.map((items, index)=>{
-          return(
-            <li key={index}>
-              <Link to={items.path}>{items.text}</Link>
-            </li>
-          )}
-          )}
-        </ul>
+      <div className={ClientDashboardStyles.leftSide}>
+        <ClientSideBar/>
+      </div>
+      <div className={ClientDashboardStyles.middleSide}>
+        <Outlet/>
+        <div className={ClientDashboardStyles.dasboardCardHeader}>
+          <div className={ClientDashboardStyles.headCard}>
+            <h3>Welcome here</h3>
+            <p>Check here to see if it works</p>
+            <button className={ClientDashboardStyles.CardBtn}>Click</button>
+          </div>
 
-        <div>
-          <li>Check here</li>
+          <div className={ClientDashboardStyles.dashboardSubLinks}>
+            <div className={ClientDashboardStyles.subLink}>
+              {clientSubDashboardData.map((item, index)=>{
+                return(
+                  <li className={ClientDashboardStyles.subLinkItem} key={index}>
+                    <Link to={item.path}>{item.text}</Link>
+                  </li>
+                )
+              })}
+            </div>
+            <div className={ClientDashboardStyles.secondSubLink}>
+              {clientSecondSubDashboardData.map((secondItems, index)=>{
+                return(
+                  <li key={index}>
+                    <Link to={secondItems.path}>{secondItems.text}</Link>
+                  </li>
+                )
+              })}
+            </div>
+          </div>
+      </div>
+
+      <div className={ClientDashboardStyles.recommendedClientPost}>
+        <RecentPost/>
+      </div>
+      <div className={ClientDashboardStyles.dashboardFooter}>
+        
+      </div>
+      </div>
+
+      <div className={ClientDashboardStyles.rightSide}>
+        <div className={ClientDashboardStyles.dashboardProfile}>
+          <h1>Top Technicians </h1>
         </div>
-       </div> 
-       {/* Client search input here */}
-       <ClientSearchInput/>
-       {/* top post from the client */}
-       <div>
-       <RecentPost/>
-       </div>
-        {/* top reviews from the clients */}
-      <div>
-      <RecentReviews/>
       </div>
-      </div>
-    </div>
 
-  </div>
+    </div>
+    </>
   )
 }
 export default ClientDashboard
