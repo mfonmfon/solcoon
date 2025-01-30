@@ -31,15 +31,15 @@ const clientSideBar = [
   ,
   {
     id:3, 
-    text:"Settings",
+    text:"Subscription",
     icons:<SettingsIcon/>,
-    path:"/settings",
+    path:"/subscription",
   },
   {
     id:3, 
-    text:"Settings",
+    text:"Dictionary",
     icons:<SettingsIcon/>,
-    path:"/settings",
+    path:"/dictionary",
   },
   {
     id:3, 

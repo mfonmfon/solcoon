@@ -19,7 +19,8 @@ import Earnings from "../components/dashboard/earnings/Earnings"
 import ClientDashboard from "../components/dashboard/clientDashboard/ClientDashboard"
 import FindWork from '../components/dashboard/clientDashboard/RecentPost'
 import Subscription from "../components/subscription/Subscription"
-import ClientSignup from "../auth/signup/client/ClientSignup"
+import ClientSignup from "../auth/signup/client/ClientSignup" 
+import Dictionary from "../components/dashboard/dictionary/Dictionary"
 const SOLVAS_ROUTES = [
   {
     path:'',
@@ -117,7 +118,11 @@ const SOLVAS_ROUTES = [
   {
     path: '/subscription',
     element:<Subscription/>
-  }
+  },
+  {
+    path: '/dictionary',
+    element:<Dictionary/>
+  },
 
 
 ]

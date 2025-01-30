@@ -1,0 +1,117 @@
+.dictionaryContainer{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #F5F5F5;
+  background: linear-gradient(50deg, #093eb1 40%, #04166f 70%);
+}
+.dictionaryHeader .dictionaryTitle{
+  font-size: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+.dictionaryHeader .dictionaryDescription{
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  margin-top: 20px;
+}
+
+.dictionaryInput{
+  position: relative;
+  margin-top: 50px;
+}
+.dictionaryInput .dictionaryInputField{
+  width: 850px;
+  border-radius: 23px;
+}
+.dictionaryInputField{
+  padding: 15px;
+  border: none;
+  border-radius: 23px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.dictionaryInputField .dictionaryInputIcon{
+  font-size: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.dictionaryContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  flex-wrap: nowrap;
+  gap: 50px;
+}
+
+.dictionaryContentCard{
+  width: 300px;
+  height: 200px;
+  background-color: rgb(16, 35, 118);
+  border-radius: 23px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.dictionaryContentDescription{
+  width: 200px;
+  text-align: center;
+  justify-content: center;
+}
+
+@media(max-width:768px){
+  .dictionaryContainer{
+   /* width: 100%; */
+  }
+  .dictionaryHeader{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .dictionaryHeader .dictionaryTitle{
+    align-items: center;
+    width: 57%;
+    font-size: 30px;
+    justify-content: center;
+  }
+  .dictionaryTitle{
+    text-align: center;
+    margin-top: 20%;
+  }
+  .dictionaryHeader .dictionaryDescription{
+    width: 52%;
+    align-items: center;
+    font-size: 14px;
+    text-align: center;
+    margin-left: 18px;
+  }
+  .dictionaryDescription{
+    text-align: center;
+  }
+  .dictionaryInput .dictionaryInputField{
+    width: 850px;
+  }
+  .dictionaryInputField{
+   
+  }
+  .dictionaryContent{
+    display: block;
+    flex-direction: column;
+  }
+  .dictionaryContentCard{
+    
+  }
+}
